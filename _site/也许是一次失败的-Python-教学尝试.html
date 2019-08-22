@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>也许是一次失败的 Python 教学尝试 - 解添昊的博客</title>
+    <meta name="author"  content="解添昊">
+    <meta name="description" content="也许是一次失败的 Python 教学尝试">
+    <meta name="keywords"  content="python">
+    <!-- Open Graph -->
+    <meta property="og:title" content="也许是一次失败的 Python 教学尝试 - 解添昊的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84-Python-%E6%95%99%E5%AD%A6%E5%B0%9D%E8%AF%95.html">
+    <meta property="og:description" content="Nothing">
+    <meta property="og:site_name" content="解添昊的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#python" class="post-tag">python</a>
+          
+        
+      </div>
+      <h1>也许是一次失败的 Python 教学尝试</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>解添昊</span>
+        <time class="post-meta-item" datetime="19-04-11"><i class="iconfont icon-date"></i>11 Apr 2019</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+    <h2 class="post-subtitle"></h2>
+    
+
+    <article class="markdown-body">
+      <blockquote>
+  <p>今晚给计算机兴趣小组的同学讲解了 Python 的基本语法，感觉效果一般。一方面来看，我的一些表达还有问题，另一方面也受到了时间的限制。</p>
+
+  <p>没有写 PPT，而是写了一个简短的提纲，并且结合代码来进行演示，本以为他们学习了VB，对变量、函数等概念也许很容易理解，但似乎并不是如此。</p>
+
+  <p>如何去教会一个小白编程，是一个值得思考的问题。</p>
+</blockquote>
+
+<h1 id="python">Python</h1>
+
+<p>1989年圣诞节期间，在阿姆斯特丹，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序</p>
+
+<p><img src="../assets/img/1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06.png" alt="1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06" /></p>
+
+<p>Python之父</p>
+
+<p>Guido van Rossum (BDFL)</p>
+
+<h2 id="应用">应用</h2>
+
+<p>使用 Python 最多的领域是数据分析，超过58%，其次才是Web开发、运维、机器学习、网络爬虫、测试等。</p>
+
+<p><img src="../assets/img/20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1.png" alt="20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1" /></p>
+
+<h2 id="python2-or-python3">Python2 or Python3</h2>
+
+<p>到今年截止，使用Python3的比例达到84％，这个数据在2017年还是75%，可以预见未来两年，Python3将覆盖90%以上，因为到2020年，Python2就将正式停止维护了。</p>
+
+<p><img src="../assets/img/WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec.png" alt="WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec" /></p>
+
+<h2 id="语法快速入门">语法快速入门</h2>
+
+<p>解释型、跨平台、面向对象</p>
+
+<h3 id="变量名">变量名：</h3>
+
+<p>可以包括英文、数字以及下划线，但不能以数字开头，区分大小写</p>
+
+<h3 id="变量类型">变量类型：</h3>
+
+<p>弱类型语言、无需声明</p>
+
+<ul>
+  <li>数字 Number：整型和浮点型</li>
+  <li>字符串 String：字符串拼接、长度、切片</li>
+  <li>列表 List：添加元素、求长、切片、删除</li>
+  <li>元组 Tuple：readonly</li>
+  <li>字典 Dictionary</li>
+</ul>
+
+<h3 id="注释三引号">注释：，三引号</h3>
+
+<h3 id="保留字符">保留字符：</h3>
+
+<p>and，not，class，def，等等等等
+行和缩进</p>
+
+<h3 id="运算符">运算符：</h3>
+
+<ul>
+  <li>算术运算符：+，-，* ，/，%</li>
+  <li>比较运算符：==，!=，&gt;，&lt;，&gt;=，&lt;=</li>
+  <li>赋值运算符：=，+=，-=，*=，/=，%=</li>
+  <li>逻辑运算符：and，or，not</li>
+</ul>
+
+<h3 id="条件">条件：</h3>
+
+<ul>
+  <li>if…</li>
+  <li>if…else…</li>
+  <li>if…elif…else</li>
+</ul>
+
+<h3 id="循环">循环：</h3>
+
+<ul>
+  <li>while</li>
+  <li>for，for 遍历 list 和 dict</li>
+</ul>
+
+<h3 id="循环控制">循环控制：</h3>
+
+<ul>
+  <li>break</li>
+  <li>continue</li>
+  <li>pass</li>
+</ul>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.jpg" alt="">
+      </div>
+      <div class="author-name" rel="author">解添昊</div>
+      <div class="bio">
+        <p>学生/Python/Too young too simple sometimes naive</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/exb123" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/loner1024" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//www.zhihu.com/people/loner-76" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html" class="read-next-link"></a>
+        <section>
+          <span>SQL 学习笔记</span>
+          <p>SQL 学习笔记</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/%E9%87%8D%E5%BC%80%E5%8D%9A%E5%AE%A2.html" class="read-next-link"></a>
+          <section>
+            <span>重开博客</span>
+            <p>刚开始尝试写博客大概还是上初中时，博客开了又关，关了又开，断断续续，大抵还是没有输出什么真正有用的内容。这次又重新...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="" alt="">
+          
+      </div>
+      
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>解添昊的博客 ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'qq'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://loner1024.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

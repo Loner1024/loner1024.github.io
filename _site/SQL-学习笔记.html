@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL 学习笔记 - 解添昊的博客</title>
+    <meta name="author"  content="解添昊">
+    <meta name="description" content="SQL 学习笔记">
+    <meta name="keywords"  content="笔记, SQL">
+    <!-- Open Graph -->
+    <meta property="og:title" content="SQL 学习笔记 - 解添昊的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html">
+    <meta property="og:description" content="Nothing">
+    <meta property="og:site_name" content="解添昊的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#%E7%AC%94%E8%AE%B0" class="post-tag">笔记</a>
+          
+            <a href="/tags.html#SQL" class="post-tag">SQL</a>
+          
+        
+      </div>
+      <h1>SQL 学习笔记</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>解添昊</span>
+        <time class="post-meta-item" datetime="19-06-10"><i class="iconfont icon-date"></i>10 Jun 2019</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+    <h2 class="post-subtitle"></h2>
+    
+
+    <article class="markdown-body">
+      <h1 id="sql-学习笔记">SQL 学习笔记</h1>
+
+<h2 id="概述">概述</h2>
+
+<p>数据库是一种专门管理数据的软件。</p>
+
+<h3 id="数据模型">数据模型</h3>
+
+<ul>
+  <li>层次模型</li>
+  <li>网状模型</li>
+  <li>关系模型</li>
+</ul>
+
+<p>相比层次模型和网状模型，关系模型理解和使用起来最简单，最终，基于关系模型的关系数据库获得了绝对市场份额。</p>
+
+<h3 id="数据类型">数据类型</h3>
+
+<p>关系型数据库支持的标准数据类型包括：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">名称</th>
+      <th style="text-align: left">类型</th>
+      <th style="text-align: left">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">INT</td>
+      <td style="text-align: left">整型</td>
+      <td style="text-align: left">4字节整数类型，范围约+/-21亿</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BIGINT</td>
+      <td style="text-align: left">长整型</td>
+      <td style="text-align: left">8字节整数类型，范围约+/-922亿亿</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">REAL</td>
+      <td style="text-align: left">浮点型</td>
+      <td style="text-align: left">4字节浮点数，范围约+/-1038</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DOUBLE</td>
+      <td style="text-align: left">浮点型</td>
+      <td style="text-align: left">8字节浮点数，范围约+/-10308</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DECIMAL(M,N)</td>
+      <td style="text-align: left">高精度小数</td>
+      <td style="text-align: left">由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CHAR(N)</td>
+      <td style="text-align: left">定长字符串</td>
+      <td style="text-align: left">存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">VARCHAR(N)</td>
+      <td style="text-align: left">变长字符串</td>
+      <td style="text-align: left">存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BOOLEAN</td>
+      <td style="text-align: left">布尔类型</td>
+      <td style="text-align: left">存储True或者False</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DATE</td>
+      <td style="text-align: left">日期类型</td>
+      <td style="text-align: left">存储日期，例如，2018-06-22</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TIME</td>
+      <td style="text-align: left">时间类型</td>
+      <td style="text-align: left">存储时间，例如，12:20:59</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">DATETIME</td>
+      <td style="text-align: left">日期和时间类型</td>
+      <td style="text-align: left">存储日期+时间，例如，2018-06-22 12:20:59</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="主流关系数据库">主流关系数据库</h3>
+
+<ol>
+  <li>商用数据库，例如：<a href="https://www.oracle.com/">Oracle</a>，<a href="https://www.microsoft.com/sql-server/">SQL Server</a>，<a href="https://www.ibm.com/db2/">DB2</a>等；</li>
+  <li>开源数据库，例如：<a href="https://www.mysql.com/">MySQL</a>，<a href="https://www.postgresql.org/">PostgreSQL</a>等；</li>
+  <li>桌面数据库，以微软<a href="https://products.office.com/access">Access</a>为代表，适合桌面应用程序使用；</li>
+  <li>嵌入式数据库，以<a href="https://sqlite.org/">Sqlite</a>为代表，适合手机应用和桌面程序。</li>
+</ol>
+
+<h3 id="sql">SQL</h3>
+
+<p>SQL 是结构化查询语言的缩写，用来访问和操作数据库。不同的数据库，都支持 SQL ，通过学习 SQL 这一种语言，就可以操作各种不同的数据库。</p>
+
+<p>虽然 SQL 已经被 ANSI 组织定义为标准，但不同数据库对标准的 SQL 支持不太一致。并且，大部分数据库都在标准的 SQL 上做了扩展。如果只使用标准 SQL 的核心功能，那么所有数据库通常都可以执行。</p>
+
+<p>SQL 语言定义了这些操作数据库的能力：</p>
+
+<p><strong>DDL：Data Definition Language</strong></p>
+
+<p>DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。</p>
+
+<p><strong>DML：Data Manipulation Language</strong></p>
+
+<p>DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。</p>
+
+<p><strong>DQL：Data Query Language</strong></p>
+
+<p>DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。</p>
+
+<h3 id="语法特点">语法特点</h3>
+
+<p>SQL 语言关键字不区分大小写，但对不同的数据库，对于表名和列名，又多数据库区分大小写，有的数据库不区分大小写。同一个数据库，有的在Linux上区分大小写，有的在Windows上不区分大小写。</p>
+
+<h2 id="安装-mysql">安装 MySQL</h2>
+
+<p><strong>MySQL</strong>：MySQL AB —&gt; SUN —&gt; Oracle</p>
+
+<p>MySQL 本身只是一个 SQL 数据接口，其内部包含多种数据引擎，常用包括：InnoDB 和 MyISAM。</p>
+
+<p>基于 MySQL 的开源版本，衍生出了各种版本：</p>
+
+<p><strong>MariaDB</strong></p>
+
+<p>由MySQL的创始人创建的一个开源分支版本，使用XtraDB引擎。</p>
+
+<p><strong>Aurora</strong></p>
+
+<p>由Amazon改进的一个MySQL版本，专门提供给在AWS托管MySQL用户，号称5倍的性能提升。</p>
+
+<p><strong>PolarDB</strong></p>
+
+<p>由Alibaba改进的一个MySQL版本，专门提供给在<a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=cz36baxa">阿里云</a>托管的MySQL用户，号称6倍的性能提升。</p>
+
+<p>而MySQL官方版本又分了好几个版本：</p>
+
+<ul>
+  <li>Community Edition：社区开源版本，免费；</li>
+  <li>Standard Edition：标准版；</li>
+  <li>Enterprise Edition：企业版；</li>
+  <li>Cluster Carrier Grade Edition：集群版。</li>
+</ul>
+
+<p>https://dev.mysql.com/downloads/mysql/</p>
+
+<h2 id="关系模型">关系模型</h2>
+
+<p>关系型数据库是简历在关系模型上的，而关系模型的本质就是若干个存储数据的二维表。</p>
+
+<p>表的每一行称为记录（Record），记录是一个逻辑意义上的数据。</p>
+
+<p>表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。</p>
+
+<p>在关系数据库中，关系是通过<strong>主键</strong>和<strong>外键</strong>来维护的。</p>
+
+<h3 id="主键">主键</h3>
+
+<p>在关系数据库中，一张表中的每一行数据被称为一条记录。一条记录就是由多个字段组成的。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。</p>
+
+<p>对于关系表，有一个很重要的约束：任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是能够通过某个字段唯一区分出不同的记录，这个字段被称为<strong>主键</strong>。</p>
+
+<p>一旦插入到表中，主键最好不要再修改，因为主键是用来唯一定位记录的，修改了主键，会造成一些了影响。选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。</p>
+
+<p>作为主键最好是完全业务无关字段，我们一般把这个字段命名为<code class="highlighter-rouge">id</code>，常见的可以作为i<code class="highlighter-rouge">d</code>的字段类型有：</p>
+
+<ol>
+  <li>自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数。</li>
+  <li>全局唯一 GUID 类型：使用一种全局唯一的字符串作为主键。</li>
+</ol>
+
+<blockquote>
+  <p>如果使用 INT 自增类型，那么当一张表的记录数超过2147483647（约21亿）时，会达到上限而出错。使用BIGINT自增类型则可以最多约922亿亿条记录。</p>
+</blockquote>
+
+<h3 id="联合主键">联合主键</h3>
+
+<p>两个或更多的字段都设置为主键，这种主键被称之为联合主键。</p>
+
+<p>对于联合主键，允许一列有重复，只要不是所有主键列都重复即可。</p>
+
+<p>联合主键并不常用。</p>
+
+<h3 id="外键">外键</h3>
+
+<p>关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。</p>
+
+<h2 id="索引">索引</h2>
+
+<p>使用索引可以在数据量大时，获得非常快的查找速度。</p>
+
+<p>可以对一张表创建多个索引。索引提高了查询效率，但在插入、更新和删除记录时，需要同时修改索引，因此，缩影越多，插入、更新和删除记录的速度就越慢。</p>
+
+<h3 id="唯一索引">唯一索引</h3>
+
+<p>在设计关系数据库时，具有业务含义的列，不宜作为主键，但例如身份证号，邮箱地址这些列，但根据业务需求，这些列又具有唯一性约束。这个时候，就可以为这个列添加一个唯一索引。</p>
+
+<p>是否创建索引，对于用户及应用程序来说，并没有区别。但在数据库中查询时，如果有相应的索引可用，数据库就会自动索引来提高查询效率。</p>
+
+<h2 id="数据查询">数据查询</h2>
+
+<h3 id="基本查询">基本查询</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">SELECT</code> 是关键字，表示将要执行一个查询，<code class="highlighter-rouge">*</code>表示”所有列”，<code class="highlighter-rouge">FORM</code>表示将要从哪个表查询。</p>
+
+<p>查询结果是一个二维表，它包含列名和每一行数据。</p>
+
+<h3 id="条件查询">条件查询</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">&lt;</span><span class="err">表名</span><span class="o">&gt;</span> <span class="k">WHERE</span> <span class="o">&lt;</span><span class="err">条件表达式</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.jpg" alt="">
+      </div>
+      <div class="author-name" rel="author">解添昊</div>
+      <div class="bio">
+        <p>学生/Python/Too young too simple sometimes naive</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/exb123" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/loner1024" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//www.zhihu.com/people/loner-76" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html" class="read-next-link"></a>
+        <section>
+          <span>冒泡排序</span>
+          <p>冒泡排序</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84-Python-%E6%95%99%E5%AD%A6%E5%B0%9D%E8%AF%95.html" class="read-next-link"></a>
+          <section>
+            <span>也许是一次失败的 Python 教学尝试</span>
+            <p>  今晚给计算机兴趣小组的同学讲解了 Python 的基本语法，感觉效果一般。一方面来看，我的一些表达还有问题，另...</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="" alt="">
+          
+      </div>
+      
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>解添昊的博客 ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'qq'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://loner1024.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>解添昊的博客</title>
+    <description>Nothing</description>
+    <link>http://localhost:4000//</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 20 Aug 2019 17:20:33 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Aug 2019 17:20:33 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>瘫在床上的感想</title>
+        <description>&lt;p&gt;理想和情怀早已一文不值，毕竟如果它们很值钱，可能就会陷入唯心主义。&lt;/p&gt;
+
+&lt;p&gt;理性并不总是有用，更何况我所拥有的理性不过是低级阶段。&lt;/p&gt;
+
+&lt;p&gt;少数人掌握规则，这些人中的佼佼者或许可以制定规则。更少的人掌握某一范围内的规律，而掌握较为高层次的规律的人屈指可数。当然，这是指社会运行的规律。
+性格里带来的东西，现在不会的话，以后大概率也不会。&lt;/p&gt;
+
+&lt;p&gt;我的心态还是不够好，毕竟本来也就是情绪不稳定的人，我自己对心态的调整好像方向有问题，越来越冷漠。&lt;/p&gt;
+
+&lt;p&gt;我的一生应该怎样度过，似乎已经成了一个迫在眉睫的问题，焦虑和这个问题伴随在一起。&lt;/p&gt;
+
+&lt;p&gt;曾经想过，干几件引以为豪的事情，找一个共度一生的人。人生过去四分之一，还是这样。现在，大概还是我的梦想。&lt;/p&gt;
+
+&lt;p&gt;回头看，一无所有，直至今日。&lt;/p&gt;
+
+&lt;p&gt;原来我也会无病呻吟。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E7%98%AB%E5%9C%A8%E5%BA%8A%E4%B8%8A%E7%9A%84%E6%84%9F%E6%83%B3.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E7%98%AB%E5%9C%A8%E5%BA%8A%E4%B8%8A%E7%9A%84%E6%84%9F%E6%83%B3.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>我的2019</title>
+        <description>&lt;p&gt;这个文档创建的时间是6月23日，其实应该是在6月初就想写了，之前也想了很多要说的。到今日，零零碎碎的东西早已忘了，但思想感情还是大体一致的吧。&lt;/p&gt;
+
+&lt;p&gt;下学期开学就大三了，马上20了，真是奇怪。&lt;/p&gt;
+
+&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
+
+&lt;p&gt;该从哪开始呢，还是从学校开始吧。这个学期课挺多的，午睡的次数明显减少，上课还是一样的摸鱼划水。不过现在感觉逐渐掌握了考试的技巧，原来复习两星期，现在复习两天还要拿一天来摸鱼。自己的专业上实在是没什么可说的，我也不喜欢，混个毕业吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;技术&quot;&gt;技术&lt;/h2&gt;
+
+&lt;p&gt;本想着，这个学期来要好好学数据结构，结果课多，自己又是个喜欢摸鱼的性格，到现在也没看多少。不过对 flask 的学习倒是上了一个台阶，虽然也还没写出什么实质性的作品来，但能明显感觉到，自己的技术路线在逐渐清晰了。目前打算写一个课程表应用，包括微信小程序，QQ小程序，用 Flutter 开发移动应用，Flask后端，用 Docker 部署，自己实现文字识别的神经网络。这样一套开发下来，在工程上，自己也就具有了一定的能力，也许找个工作也什么问题了。（不过纯 Python  难找，也考虑后面学 Go ）&lt;/p&gt;
+
+&lt;h2 id=&quot;考研&quot;&gt;考研&lt;/h2&gt;
+
+&lt;p&gt;考研，有了一点规划，但尚不明朗，目前来说，至少学校大体可以确定了。上学期刚坚定考研的想法的时候，学校问题真是头大。这学期刚开始看到了新筹建的深圳技术大学，还是408统考，拿深圳大学毕业证学位证，感觉可以尝试一下。后来又改变了想法，想去北京，又考虑了北邮。前两天王道论坛里一看，突然觉得北大有望啊！我还是有些名校情节的，不过这事情还需掂量掂量，毕竟头铁的都死了。&lt;/p&gt;
+
+&lt;h2 id=&quot;自己&quot;&gt;自己&lt;/h2&gt;
+
+&lt;p&gt;愚钝，愈发觉得这两个字符合自己，原想不是什么好的形容，不过最近倒是想通了，愚钝让我多想，我总是试图去把事情想明白，虽然不是所有事情都能想清楚。但多想，总没有坏处。&lt;/p&gt;
+
+&lt;h2 id=&quot;悄悄话&quot;&gt;悄悄话&lt;/h2&gt;
+
+&lt;p&gt;这半年来，刚开始以为自己把很多问题想清楚了，原有的迷茫感渐渐淡去。但四月底，认识她以后，才发现，自己原来还待在高楼上，望尽天涯路呢。颇有种没看新手教学，就直接进入游戏的感觉（滑稽）。她的问题，我又何尝不迷茫;她的担忧，我恐怕更甚，只是如果两个人都迷茫就不好了。我也不知自己置身于何处，我想，与她梦想的相比，我实在是差了许多。不过倒也想明白了许多东西。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;刚开始想着，要怎么想个高深一点的标题，到头来，也总结不了，干脆就简单粗暴一点，年底的时候，再写个（下），也算呼应了。&lt;/p&gt;
+
+&lt;p&gt;还是要拿出信心，克服一切艰难困苦，稳步地达到自己的目的！&lt;/p&gt;
+
+&lt;p&gt;2019-07-13&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Jul 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E6%88%91%E7%9A%842019.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E6%88%91%E7%9A%842019.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>冒泡排序</title>
+        <description>&lt;h1 id=&quot;冒泡排序&quot;&gt;冒泡排序&lt;/h1&gt;
+
+&lt;p&gt;冒泡排序是一种简单的排序算法，其复杂度为 &lt;strong&gt;&lt;em&gt;O(n^2)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;理解&quot;&gt;理解&lt;/h2&gt;
+
+&lt;p&gt;从头至尾比较数组内相邻两个元素，如果前面的元素比后面的元素大，则交换位置，一次循环过后，最后的元素即为最大值，下次扫描时即可忽略最后一个位置上的元素。&lt;/p&gt;
+
+&lt;h2 id=&quot;pat-题目&quot;&gt;PAT 题目&lt;/h2&gt;
+
+&lt;p&gt;将&lt;em&gt;N&lt;/em&gt;个整数按从小到大排序的冒泡排序法是这样工作的：从头到尾比较相邻两个元素，如果前面的元素大于其紧随的后面元素，则交换它们。通过一遍扫描，则最后一个元素必定是最大的元素。然后用同样的方法对前&lt;em&gt;N&lt;/em&gt;−1个元素进行第二遍扫描。依此类推，最后只需处理两个元素，就完成了对&lt;em&gt;N&lt;/em&gt;个数的排序。&lt;/p&gt;
+
+&lt;p&gt;本题要求对任意给定的&lt;em&gt;K&lt;/em&gt;（&amp;lt;&lt;em&gt;N&lt;/em&gt;），输出扫描完第&lt;em&gt;K&lt;/em&gt;遍后的中间结果数列。&lt;/p&gt;
+
+&lt;h3 id=&quot;输入格式&quot;&gt;输入格式：&lt;/h3&gt;
+
+&lt;p&gt;输入在第1行中给出&lt;em&gt;N&lt;/em&gt;和&lt;em&gt;K&lt;/em&gt;（1≤&lt;em&gt;K&lt;/em&gt;&amp;lt;&lt;em&gt;N&lt;/em&gt;≤100），在第2行中给出&lt;em&gt;N&lt;/em&gt;个待排序的整数，数字间以空格分隔。&lt;/p&gt;
+
+&lt;h3 id=&quot;输出格式&quot;&gt;输出格式：&lt;/h3&gt;
+
+&lt;p&gt;在一行中输出冒泡排序法扫描完第&lt;em&gt;K&lt;/em&gt;遍后的中间结果数列，数字间以空格分隔，但末尾不得有多余空格。&lt;/p&gt;
+
+&lt;h3 id=&quot;输入样例&quot;&gt;输入样例：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-in&quot;&gt;6 2
+2 3 5 1 6 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;输出样例&quot;&gt;输出样例：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-out&quot;&gt;2 1 3 4 5 6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;解答&quot;&gt;解答&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 24 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html</guid>
+        
+        <category>算法</category>
+        
+        <category>排序算法</category>
+        
+        <category>排序</category>
+        
+        
+        <category>数据结构与算法</category>
+        
+      </item>
+    
+      <item>
+        <title>SQL 学习笔记</title>
+        <description>&lt;h1 id=&quot;sql-学习笔记&quot;&gt;SQL 学习笔记&lt;/h1&gt;
+
+&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+
+&lt;p&gt;数据库是一种专门管理数据的软件。&lt;/p&gt;
+
+&lt;h3 id=&quot;数据模型&quot;&gt;数据模型&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;层次模型&lt;/li&gt;
+  &lt;li&gt;网状模型&lt;/li&gt;
+  &lt;li&gt;关系模型&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;相比层次模型和网状模型，关系模型理解和使用起来最简单，最终，基于关系模型的关系数据库获得了绝对市场份额。&lt;/p&gt;
+
+&lt;h3 id=&quot;数据类型&quot;&gt;数据类型&lt;/h3&gt;
+
+&lt;p&gt;关系型数据库支持的标准数据类型包括：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;名称&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;类型&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;说明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;INT&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;整型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4字节整数类型，范围约+/-21亿&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BIGINT&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;长整型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;8字节整数类型，范围约+/-922亿亿&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;REAL&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;浮点型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4字节浮点数，范围约+/-1038&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DOUBLE&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;浮点型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;8字节浮点数，范围约+/-10308&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DECIMAL(M,N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;高精度小数&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CHAR(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;定长字符串&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;VARCHAR(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;变长字符串&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BOOLEAN&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;布尔类型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储True或者False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DATE&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;日期类型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储日期，例如，2018-06-22&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;TIME&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;时间类型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储时间，例如，12:20:59&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DATETIME&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;日期和时间类型&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;存储日期+时间，例如，2018-06-22 12:20:59&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;主流关系数据库&quot;&gt;主流关系数据库&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;商用数据库，例如：&lt;a href=&quot;https://www.oracle.com/&quot;&gt;Oracle&lt;/a&gt;，&lt;a href=&quot;https://www.microsoft.com/sql-server/&quot;&gt;SQL Server&lt;/a&gt;，&lt;a href=&quot;https://www.ibm.com/db2/&quot;&gt;DB2&lt;/a&gt;等；&lt;/li&gt;
+  &lt;li&gt;开源数据库，例如：&lt;a href=&quot;https://www.mysql.com/&quot;&gt;MySQL&lt;/a&gt;，&lt;a href=&quot;https://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;等；&lt;/li&gt;
+  &lt;li&gt;桌面数据库，以微软&lt;a href=&quot;https://products.office.com/access&quot;&gt;Access&lt;/a&gt;为代表，适合桌面应用程序使用；&lt;/li&gt;
+  &lt;li&gt;嵌入式数据库，以&lt;a href=&quot;https://sqlite.org/&quot;&gt;Sqlite&lt;/a&gt;为代表，适合手机应用和桌面程序。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;sql&quot;&gt;SQL&lt;/h3&gt;
+
+&lt;p&gt;SQL 是结构化查询语言的缩写，用来访问和操作数据库。不同的数据库，都支持 SQL ，通过学习 SQL 这一种语言，就可以操作各种不同的数据库。&lt;/p&gt;
+
+&lt;p&gt;虽然 SQL 已经被 ANSI 组织定义为标准，但不同数据库对标准的 SQL 支持不太一致。并且，大部分数据库都在标准的 SQL 上做了扩展。如果只使用标准 SQL 的核心功能，那么所有数据库通常都可以执行。&lt;/p&gt;
+
+&lt;p&gt;SQL 语言定义了这些操作数据库的能力：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DDL：Data Definition Language&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DML：Data Manipulation Language&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DQL：Data Query Language&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。&lt;/p&gt;
+
+&lt;h3 id=&quot;语法特点&quot;&gt;语法特点&lt;/h3&gt;
+
+&lt;p&gt;SQL 语言关键字不区分大小写，但对不同的数据库，对于表名和列名，又多数据库区分大小写，有的数据库不区分大小写。同一个数据库，有的在Linux上区分大小写，有的在Windows上不区分大小写。&lt;/p&gt;
+
+&lt;h2 id=&quot;安装-mysql&quot;&gt;安装 MySQL&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;MySQL&lt;/strong&gt;：MySQL AB —&amp;gt; SUN —&amp;gt; Oracle&lt;/p&gt;
+
+&lt;p&gt;MySQL 本身只是一个 SQL 数据接口，其内部包含多种数据引擎，常用包括：InnoDB 和 MyISAM。&lt;/p&gt;
+
+&lt;p&gt;基于 MySQL 的开源版本，衍生出了各种版本：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MariaDB&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由MySQL的创始人创建的一个开源分支版本，使用XtraDB引擎。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Aurora&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由Amazon改进的一个MySQL版本，专门提供给在AWS托管MySQL用户，号称5倍的性能提升。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PolarDB&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由Alibaba改进的一个MySQL版本，专门提供给在&lt;a href=&quot;https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=cz36baxa&quot;&gt;阿里云&lt;/a&gt;托管的MySQL用户，号称6倍的性能提升。&lt;/p&gt;
+
+&lt;p&gt;而MySQL官方版本又分了好几个版本：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Community Edition：社区开源版本，免费；&lt;/li&gt;
+  &lt;li&gt;Standard Edition：标准版；&lt;/li&gt;
+  &lt;li&gt;Enterprise Edition：企业版；&lt;/li&gt;
+  &lt;li&gt;Cluster Carrier Grade Edition：集群版。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
+
+&lt;h2 id=&quot;关系模型&quot;&gt;关系模型&lt;/h2&gt;
+
+&lt;p&gt;关系型数据库是简历在关系模型上的，而关系模型的本质就是若干个存储数据的二维表。&lt;/p&gt;
+
+&lt;p&gt;表的每一行称为记录（Record），记录是一个逻辑意义上的数据。&lt;/p&gt;
+
+&lt;p&gt;表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。&lt;/p&gt;
+
+&lt;p&gt;在关系数据库中，关系是通过&lt;strong&gt;主键&lt;/strong&gt;和&lt;strong&gt;外键&lt;/strong&gt;来维护的。&lt;/p&gt;
+
+&lt;h3 id=&quot;主键&quot;&gt;主键&lt;/h3&gt;
+
+&lt;p&gt;在关系数据库中，一张表中的每一行数据被称为一条记录。一条记录就是由多个字段组成的。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。&lt;/p&gt;
+
+&lt;p&gt;对于关系表，有一个很重要的约束：任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是能够通过某个字段唯一区分出不同的记录，这个字段被称为&lt;strong&gt;主键&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;一旦插入到表中，主键最好不要再修改，因为主键是用来唯一定位记录的，修改了主键，会造成一些了影响。选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。&lt;/p&gt;
+
+&lt;p&gt;作为主键最好是完全业务无关字段，我们一般把这个字段命名为&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;，常见的可以作为i&lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt;的字段类型有：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数。&lt;/li&gt;
+  &lt;li&gt;全局唯一 GUID 类型：使用一种全局唯一的字符串作为主键。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果使用 INT 自增类型，那么当一张表的记录数超过2147483647（约21亿）时，会达到上限而出错。使用BIGINT自增类型则可以最多约922亿亿条记录。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;联合主键&quot;&gt;联合主键&lt;/h3&gt;
+
+&lt;p&gt;两个或更多的字段都设置为主键，这种主键被称之为联合主键。&lt;/p&gt;
+
+&lt;p&gt;对于联合主键，允许一列有重复，只要不是所有主键列都重复即可。&lt;/p&gt;
+
+&lt;p&gt;联合主键并不常用。&lt;/p&gt;
+
+&lt;h3 id=&quot;外键&quot;&gt;外键&lt;/h3&gt;
+
+&lt;p&gt;关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。&lt;/p&gt;
+
+&lt;h2 id=&quot;索引&quot;&gt;索引&lt;/h2&gt;
+
+&lt;p&gt;使用索引可以在数据量大时，获得非常快的查找速度。&lt;/p&gt;
+
+&lt;p&gt;可以对一张表创建多个索引。索引提高了查询效率，但在插入、更新和删除记录时，需要同时修改索引，因此，缩影越多，插入、更新和删除记录的速度就越慢。&lt;/p&gt;
+
+&lt;h3 id=&quot;唯一索引&quot;&gt;唯一索引&lt;/h3&gt;
+
+&lt;p&gt;在设计关系数据库时，具有业务含义的列，不宜作为主键，但例如身份证号，邮箱地址这些列，但根据业务需求，这些列又具有唯一性约束。这个时候，就可以为这个列添加一个唯一索引。&lt;/p&gt;
+
+&lt;p&gt;是否创建索引，对于用户及应用程序来说，并没有区别。但在数据库中查询时，如果有相应的索引可用，数据库就会自动索引来提高查询效率。&lt;/p&gt;
+
+&lt;h2 id=&quot;数据查询&quot;&gt;数据查询&lt;/h2&gt;
+
+&lt;h3 id=&quot;基本查询&quot;&gt;基本查询&lt;/h3&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;表名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; 是关键字，表示将要执行一个查询，&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;表示”所有列”，&lt;code class=&quot;highlighter-rouge&quot;&gt;FORM&lt;/code&gt;表示将要从哪个表查询。&lt;/p&gt;
+
+&lt;p&gt;查询结果是一个二维表，它包含列名和每一行数据。&lt;/p&gt;
+
+&lt;h3 id=&quot;条件查询&quot;&gt;条件查询&lt;/h3&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;表名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;条件表达式&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 10 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
+        <guid isPermaLink="true">http://localhost:4000/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        
+        <category>笔记</category>
+        
+        <category>SQL</category>
+        
+        
+        <category>笔记</category>
+        
+      </item>
+    
+      <item>
+        <title>也许是一次失败的 Python 教学尝试</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;今晚给计算机兴趣小组的同学讲解了 Python 的基本语法，感觉效果一般。一方面来看，我的一些表达还有问题，另一方面也受到了时间的限制。&lt;/p&gt;
+
+  &lt;p&gt;没有写 PPT，而是写了一个简短的提纲，并且结合代码来进行演示，本以为他们学习了VB，对变量、函数等概念也许很容易理解，但似乎并不是如此。&lt;/p&gt;
+
+  &lt;p&gt;如何去教会一个小白编程，是一个值得思考的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;python&quot;&gt;Python&lt;/h1&gt;
+
+&lt;p&gt;1989年圣诞节期间，在阿姆斯特丹，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06.png&quot; alt=&quot;1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Python之父&lt;/p&gt;
+
+&lt;p&gt;Guido van Rossum (BDFL)&lt;/p&gt;
+
+&lt;h2 id=&quot;应用&quot;&gt;应用&lt;/h2&gt;
+
+&lt;p&gt;使用 Python 最多的领域是数据分析，超过58%，其次才是Web开发、运维、机器学习、网络爬虫、测试等。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1.png&quot; alt=&quot;20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;python2-or-python3&quot;&gt;Python2 or Python3&lt;/h2&gt;
+
+&lt;p&gt;到今年截止，使用Python3的比例达到84％，这个数据在2017年还是75%，可以预见未来两年，Python3将覆盖90%以上，因为到2020年，Python2就将正式停止维护了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec.png&quot; alt=&quot;WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;语法快速入门&quot;&gt;语法快速入门&lt;/h2&gt;
+
+&lt;p&gt;解释型、跨平台、面向对象&lt;/p&gt;
+
+&lt;h3 id=&quot;变量名&quot;&gt;变量名：&lt;/h3&gt;
+
+&lt;p&gt;可以包括英文、数字以及下划线，但不能以数字开头，区分大小写&lt;/p&gt;
+
+&lt;h3 id=&quot;变量类型&quot;&gt;变量类型：&lt;/h3&gt;
+
+&lt;p&gt;弱类型语言、无需声明&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;数字 Number：整型和浮点型&lt;/li&gt;
+  &lt;li&gt;字符串 String：字符串拼接、长度、切片&lt;/li&gt;
+  &lt;li&gt;列表 List：添加元素、求长、切片、删除&lt;/li&gt;
+  &lt;li&gt;元组 Tuple：readonly&lt;/li&gt;
+  &lt;li&gt;字典 Dictionary&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;注释三引号&quot;&gt;注释：，三引号&lt;/h3&gt;
+
+&lt;h3 id=&quot;保留字符&quot;&gt;保留字符：&lt;/h3&gt;
+
+&lt;p&gt;and，not，class，def，等等等等
+行和缩进&lt;/p&gt;
+
+&lt;h3 id=&quot;运算符&quot;&gt;运算符：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;算术运算符：+，-，* ，/，%&lt;/li&gt;
+  &lt;li&gt;比较运算符：==，!=，&amp;gt;，&amp;lt;，&amp;gt;=，&amp;lt;=&lt;/li&gt;
+  &lt;li&gt;赋值运算符：=，+=，-=，*=，/=，%=&lt;/li&gt;
+  &lt;li&gt;逻辑运算符：and，or，not&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;条件&quot;&gt;条件：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if…&lt;/li&gt;
+  &lt;li&gt;if…else…&lt;/li&gt;
+  &lt;li&gt;if…elif…else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;循环&quot;&gt;循环：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;while&lt;/li&gt;
+  &lt;li&gt;for，for 遍历 list 和 dict&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;循环控制&quot;&gt;循环控制：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;break&lt;/li&gt;
+  &lt;li&gt;continue&lt;/li&gt;
+  &lt;li&gt;pass&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84-Python-%E6%95%99%E5%AD%A6%E5%B0%9D%E8%AF%95.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E4%B9%9F%E8%AE%B8%E6%98%AF%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84-Python-%E6%95%99%E5%AD%A6%E5%B0%9D%E8%AF%95.html</guid>
+        
+        <category>python</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>重开博客</title>
+        <description>&lt;p&gt;刚开始尝试写博客大概还是上初中时，博客开了又关，关了又开，断断续续，大抵还是没有输出什么真正有用的内容。这次又重新捡起来，我想认真写点东西了。&lt;br /&gt;
+  新博客选择了使用hugo，go语言开发的静态博客系统，部署在了github pages上面，当然，也不会忘记要在国内部署CDN，毕竟是一个中文博客。之所以选择使用hugo，不仅仅是想去尝试一个自己没用过的东西，也是看中了hugo没有什么依赖，生成速度快的特点，当然，未来也打算学习go语言，用一个自己能看懂的东西总是好一些的。&lt;br /&gt;
+  与以往不同，这次我在博客上写出了自己的名字，本来嘛，名字就是一个代号，与其纠结于起个什么网名，不如就用自己的真实名字。
+  在以往的博客中，我往往将博客当成了一个记笔记的地方，而不是有意识的去尝试写一些自己的的东西。以后，笔记还是去它该去的地方，而博客，应该用来写一些更有意义的内容。我想内容需要强制一下自己去尝试输出，例如一月一篇或一月几篇，当然并不能放弃质量而求数量。生活中，我的思考并不少，然而却不注意收集整理，以至于十分碎片化。通过强制输出这种方式，有助于我形成更加系统化的想法，也许，思想会从中迸发。除此之外，技术性的文章也应当有，纵使自己可能还不能有什么创造性的想法，写些总结总是没有坏处的。&lt;br /&gt;
+  几天前，阿里云发来了备案核查的邮件，想了之后，觉得也没有必要继续保留那个域名了，还是去注册一个新的吧，备案也不要了，本来也就有些鸡肋。&lt;br /&gt;
+  这次的博客也会谨慎考虑分享到自己的社交网络上了，毕竟如果想写一些自己在生活中的真实感受的话，被认识的人看到可能不太妥当。&lt;br /&gt;
+  关于这个新的博客，大抵就这些吧。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 06 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E9%87%8D%E5%BC%80%E5%8D%9A%E5%AE%A2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E9%87%8D%E5%BC%80%E5%8D%9A%E5%AE%A2.html</guid>
+        
+        <category>博客</category>
+        
+        
+        <category>博客</category>
+        
+      </item>
+    
+  </channel>
+</rss>
