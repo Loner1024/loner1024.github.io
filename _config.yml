@@ -78,11 +78,12 @@ kramdown:
   input: GFM
 
 # RSS
-RSS: false
+RSS: true
 
 # Permalink
 # See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
 permalink: /:title.html
 
 # Plugins
-plugins: [jekyll-paginate]
+#plugins: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-sitemap]

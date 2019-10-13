@@ -1,0 +1,89 @@
+I"t<blockquote>
+  <p>今晚给计算机兴趣小组的同学讲解了 Python 的基本语法，感觉效果一般。一方面来看，我的一些表达还有问题，另一方面也受到了时间的限制。</p>
+
+  <p>没有写 PPT，而是写了一个简短的提纲，并且结合代码来进行演示，本以为他们学习了VB，对变量、函数等概念也许很容易理解，但似乎并不是如此。</p>
+
+  <p>如何去教会一个小白编程，是一个值得思考的问题。</p>
+</blockquote>
+
+<h1 id="python">Python</h1>
+
+<p>1989年圣诞节期间，在阿姆斯特丹，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序</p>
+
+<p><img src="../assets/img/1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06.png" alt="1531560460675-5dfedb88-3c75-4c8b-a40a-27c78efd3b06" /></p>
+
+<p>Python之父</p>
+
+<p>Guido van Rossum (BDFL)</p>
+
+<h2 id="应用">应用</h2>
+
+<p>使用 Python 最多的领域是数据分析，超过58%，其次才是Web开发、运维、机器学习、网络爬虫、测试等。</p>
+
+<p><img src="../assets/img/20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1.png" alt="20190227122238-bd148a36-ae97-4184-b2cc-bf9204065bc1" /></p>
+
+<h2 id="python2-or-python3">Python2 or Python3</h2>
+
+<p>到今年截止，使用Python3的比例达到84％，这个数据在2017年还是75%，可以预见未来两年，Python3将覆盖90%以上，因为到2020年，Python2就将正式停止维护了。</p>
+
+<p><img src="../assets/img/WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec.png" alt="WX20190226-2346002x-130851a9-f93d-4141-abf5-f6035defabec" /></p>
+
+<h2 id="语法快速入门">语法快速入门</h2>
+
+<p>解释型、跨平台、面向对象</p>
+
+<h3 id="变量名">变量名：</h3>
+
+<p>可以包括英文、数字以及下划线，但不能以数字开头，区分大小写</p>
+
+<h3 id="变量类型">变量类型：</h3>
+
+<p>弱类型语言、无需声明</p>
+
+<ul>
+  <li>数字 Number：整型和浮点型</li>
+  <li>字符串 String：字符串拼接、长度、切片</li>
+  <li>列表 List：添加元素、求长、切片、删除</li>
+  <li>元组 Tuple：readonly</li>
+  <li>字典 Dictionary</li>
+</ul>
+
+<h3 id="注释三引号">注释：，三引号</h3>
+
+<h3 id="保留字符">保留字符：</h3>
+
+<p>and，not，class，def，等等等等
+行和缩进</p>
+
+<h3 id="运算符">运算符：</h3>
+
+<ul>
+  <li>算术运算符：+，-，* ，/，%</li>
+  <li>比较运算符：==，!=，&gt;，&lt;，&gt;=，&lt;=</li>
+  <li>赋值运算符：=，+=，-=，*=，/=，%=</li>
+  <li>逻辑运算符：and，or，not</li>
+</ul>
+
+<h3 id="条件">条件：</h3>
+
+<ul>
+  <li>if…</li>
+  <li>if…else…</li>
+  <li>if…elif…else</li>
+</ul>
+
+<h3 id="循环">循环：</h3>
+
+<ul>
+  <li>while</li>
+  <li>for，for 遍历 list 和 dict</li>
+</ul>
+
+<h3 id="循环控制">循环控制：</h3>
+
+<ul>
+  <li>break</li>
+  <li>continue</li>
+  <li>pass</li>
+</ul>
+:ET

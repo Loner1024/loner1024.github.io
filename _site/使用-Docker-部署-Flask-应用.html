@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用 Docker 部署 Flask 应用 - 解添昊的博客</title>
+    <meta name="author"  content="解添昊">
+    <meta name="description" content="使用 Docker 部署 Flask 应用">
+    <meta name="keywords"  content="Docker, 技术">
+    <!-- Open Graph -->
+    <meta property="og:title" content="使用 Docker 部署 Flask 应用 - 解添昊的博客">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/%E4%BD%BF%E7%94%A8-Docker-%E9%83%A8%E7%BD%B2-Flask-%E5%BA%94%E7%94%A8.html">
+    <meta property="og:description" content="Nothing">
+    <meta property="og:site_name" content="解添昊的博客">
+    <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
+    <link rel="stylesheet" href="/assets/css/github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/prism.css">
+    <link rel="stylesheet" href="/assets/css/share.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+
+	<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ["$", "$"] ],
+			displayMath: [ ["$$", "$$"] ],
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+		},
+		"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+      });
+    </script>
+
+	
+    <!--
+Author: Ray-Eldath
+-->
+<style>
+    .markdown-body .anchor{
+        float: left;
+        margin-top: -8px;
+        margin-left: -20px;
+        padding-right: 4px;
+        line-height: 1;
+        opacity: 0;
+    }
+    
+    .markdown-body .anchor .anchor-icon{
+        font-size: 15px
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        let nodes = document.querySelector(".markdown-body").querySelectorAll("h1,h2,h3")
+        for(let node of nodes) {
+            var anchor = document.createElement("a")
+            var anchorIcon = document.createElement("i")
+            anchorIcon.setAttribute("class", "fa fa-anchor fa-lg anchor-icon")
+            anchorIcon.setAttribute("aria-hidden", true)
+            anchor.setAttribute("class", "anchor")
+            anchor.setAttribute("href", "#" + node.getAttribute("id"))
+            
+            anchor.onmouseover = function() {
+                this.style.opacity = "0.4"
+            }
+            
+            anchor.onmouseout = function() {
+                this.style.opacity = "0"
+            }
+            
+            anchor.appendChild(anchorIcon)
+            node.appendChild(anchor)
+        }
+    })
+</script>
+</head>
+
+
+<body>
+  <!--[if lt IE 10]>
+<div class="alert-danger" role="alert">你的浏览器实在太太太旧了，放学别走，升级完浏览器再说！<a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div>
+<![endif]-->
+  <input id="nm-switch" type="hidden" value="true"> <header class="g-header">
+    <div class="g-logo">
+      <a href="/"></a>
+    </div>
+    <i id="menu-toggle" class="iconfont icon-menu"></i>
+    <nav class="g-nav">
+        <ul>
+            
+            <li><a href="/">home</a></li>
+            
+            <li><a href="/tags.html">tags</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+
+  <header
+    class="g-banner post-header post-pattern-circuitBoard bgcolor-default "
+    data-theme="default"
+  >
+    <div class="post-wrapper">
+      <div class="post-tags">
+        
+          
+            <a href="/tags.html#Docker" class="post-tag">Docker</a>
+          
+            <a href="/tags.html#%E6%8A%80%E6%9C%AF" class="post-tag">技术</a>
+          
+        
+      </div>
+      <h1>使用 Docker 部署 Flask 应用</h1>
+      <div class="post-meta">
+        <span class="post-meta-item"><i class="iconfont icon-author"></i>解添昊</span>
+        <time class="post-meta-item" datetime="19-09-16"><i class="iconfont icon-date"></i>16 Sep 2019</time>
+      </div>
+    </div>
+    
+    <div class="filter"></div>
+      <div class="post-cover" style="background: url('/assets/img/how-to-deploy-java-apps-with-docker-a-quick-tutorial@3x-1560x760.png') center no-repeat; background-size: cover;"></div>
+    
+  </header>
+
+  <div class="post-content visible">
+    
+    <h2 class="post-subtitle">一次简单的 Docker 实践</h2>
+    
+
+    <article class="markdown-body">
+      <h2 id="简介">简介</h2>
+
+<p>最近用 Flask 写了一个考试的题库系统，功能十分简单，甚至是简陋，不过本着“又不是不能用的精神”，还是用上了，直接拿着开发服务器在一台 Winodws 2008 上运行。问题也暴露出来，服务的运行不足够健壮。</p>
+
+<p>说来，这也是第一个我开发的凑合能用的那么一个 Flask 应用程序，因此也尝试一下使用 Docker 来部署这个应用。</p>
+
+<p>你可以在 GitHub 上看到整个项目的结构</p>
+
+<p>https://github.com/Loner1024/QuestionBank</p>
+
+<h2 id="安装-docker">安装 Docker</h2>
+
+<p>安装 Docker 的方法可以参考这篇文章 http://1024.services/index.php/archives/20/，基本涵盖了主流的操作系统。</p>
+
+<p>我自己并没有在服务器上去跑一个 Docker，而是只在本地进行了测试，因此本文所有的内容其实都是在 macOS 上进行的。</p>
+
+<p>在 macOS 上安装 Docker 十分简单，我们只需要使用 Homebrew 就可以：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>docker
+</code></pre></div></div>
+
+<p>当然，你也可以去官网下载一个安装包来安装，不过 Homebrew 更方便。</p>
+
+<p>安装过程可能需要输入密码，给它就好。</p>
+
+<p>安装好后你可以在状态栏看到 Docker 的鲸鱼图标。</p>
+
+<h2 id="配置-docker">配置 Docker</h2>
+
+<p>国内的网络环境会导致 Docker 拉去镜像很慢，因此我们现在要做的唯一一项配置个工作就是为 Docker 配置镜像加速器。</p>
+
+<p>国内有很多云服务厂商提供了镜像加速器服务，我这里列出两个，你也可以在网上寻找其他的。</p>
+
+<p>Azure 中国镜像 <code class="highlighter-rouge">https://dockerhub.azk8s.cn</code></p>
+
+<p>科大镜像站 <code class="highlighter-rouge">https://docker.mirrors.ustc.edu.cn</code></p>
+
+<p>在任务栏点击 Docker Desktop 应用图标 -&gt; Perferences… -&gt; Daemon -&gt; Registry mirrors。在列表中填写加速器地址 <code class="highlighter-rouge">https://dockerhub.azk8s.cn</code>。修改完成之后，点击 <code class="highlighter-rouge">Apply &amp; Restart</code> 按钮，Docker 就会重启并应用配置的镜像地址了。</p>
+
+<h2 id="配置程序依赖">配置程序依赖</h2>
+
+<p>我们的 Python 程序一般都要依赖一些包和库，一个经典的做法是用一个 <code class="highlighter-rouge">requirements.txt</code> 来记录使用了那些依赖。</p>
+
+<p>在这个程序中的 <code class="highlighter-rouge">requirements.txt  </code>文件内容如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flask
+flask-wtf
+flask-migrate
+flask-login
+Flask-SQLAlchemy
+gunicorn
+gevent
+</code></pre></div></div>
+
+<p>运行如下命令安装依赖：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install -r requirements.txt
+</code></pre></div></div>
+
+<h2 id="配置-gunicorn">配置 Gunicorn</h2>
+
+<p>首先需要安装 Gunicorn 和 gevent</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>gunicorn gevent
+</code></pre></div></div>
+
+<p>这两个库是什么作用这里不再赘述。</p>
+
+<p>然后在项目最上层的目录新建一个 <code class="highlighter-rouge">gunicorn.conf.py</code>文件，并填入如下内容：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">workers</span> <span class="o">=</span> <span class="mi">5</span>    <span class="c1"># 定义同时开启的处理请求的进程数量，根据网站流量适当调整
+</span><span class="n">worker_class</span> <span class="o">=</span> <span class="s">"gevent"</span>   <span class="c1"># 采用gevent库，支持异步处理请求，提高吞吐量
+</span><span class="n">bind</span> <span class="o">=</span> <span class="s">"0.0.0.0:80"</span>  <span class="c1"># ip和端口
+</span></code></pre></div></div>
+
+<p>然后我们可以通过 gunicorn 命令来测试是否可以正确运行</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gunicorn app:app <span class="nt">-c</span> gunicorn.conf.py
+</code></pre></div></div>
+
+<h2 id="配置-dockerfile">配置 Dockerfile</h2>
+
+<p>项目最上层的目录新建一个 <code class="highlighter-rouge">Dockerfile</code>文件，并填入如下内容：</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:3.7</span>
+<span class="k">WORKDIR</span><span class="s"> /demo</span>
+<span class="k">COPY</span><span class="s"> requirements.txt ./</span>
+<span class="k">RUN </span>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt <span class="nt">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple
+
+<span class="k">COPY</span><span class="s"> . .</span>
+
+<span class="k">CMD</span><span class="s"> ["gunicorn", "app:app", "-c", "./gunicorn.conf.py"]</span>
+</code></pre></div></div>
+
+<p>这个文件的内容，差不离应该能看懂在做什么事情，至于具体的 Dockerfile 文件应该怎么写，不是这里要说的。</p>
+
+<h2 id="构建-docker-镜像">构建 Docker 镜像</h2>
+
+<p>只需要一行命令就可以构建 Docker 镜像：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> <span class="s1">'questionbank'</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>注意：<strong>Docker 镜像名称不能使用大写字母</strong>，以及，<strong>不要忘记命令后面的点</strong></p>
+
+<p>然后就是等待。</p>
+
+<p>镜像构建完成后，你可以用 <code class="highlighter-rouge">docker images</code>来查看镜像列表。</p>
+
+<h2 id="运行镜像">运行镜像</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-it</span> <span class="nt">--rm</span> <span class="nt">-p</span> 80:80 questionbank
+</code></pre></div></div>
+
+<p>上面这条命令只能用于临时运行，因为它是显式的，一旦关闭命令窗口，也就停止运行了。</p>
+
+<p>要使用在生产环境，我们可以这样：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-p</span> 80:80 <span class="nt">--name</span> test-questionbank questionbank
+</code></pre></div></div>
+
+<p>这样，你的服务就运行在后台了。</p>
+
+<h2 id="管理">管理</h2>
+
+<p>要看到当前正在运行的镜像，我们可以使用这条命令：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container <span class="nb">ls</span>
+</code></pre></div></div>
+
+<p>终止状态的容器可以用 <code class="highlighter-rouge">docker container ls -a</code> 命令看到。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker container start <span class="c"># 启动容器</span>
+docker container stop <span class="c"># 停止容器</span>
+docker container restart <span class="c"># 重启容器</span>
+</code></pre></div></div>
+
+<p>注意，以上启动、停止、重启命令在后面都要带上<code class="highlighter-rouge">ls</code>出来的容器的 id，例如：<code class="highlighter-rouge">docker container stop 978a14e958ae</code></p>
+
+    </article>
+
+    
+    <div class="social-share-wrapper">
+      <div class="social-share"></div>
+    </div>
+    
+  </div>
+
+  <section class="author-detail">
+    <section class="post-footer-item author-card">
+      <div class="avatar">
+        <img src="/assets/img/profile.jpg" alt="">
+      </div>
+      <div class="author-name" rel="author">解添昊</div>
+      <div class="bio">
+        <p>学生/Python/Too young too simple sometimes naive</p>
+      </div>
+      
+      <ul class="sns-links">
+        
+        <li>
+          <a href="//weibo.com/exb123" target="_blank">
+                    <i class="iconfont icon-weibo"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//github.com/loner1024" target="_blank">
+                    <i class="iconfont icon-github"></i>
+                </a>
+        </li>
+        
+        <li>
+          <a href="//www.zhihu.com/people/loner-76" target="_blank">
+                    <i class="iconfont icon-zhihu"></i>
+                </a>
+        </li>
+        
+      </ul>
+      
+    </section>
+    <section class="post-footer-item read-next">
+      
+      <div class="read-next-item">
+        <a href="/%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%B8%85%E7%90%86-Docker-%E5%8D%A0%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4.html" class="read-next-link"></a>
+        <section>
+          <span>失败的清理 Docker 占用的空间</span>
+          <p>之前在 mac 上安装了 Docker，去尝试部署了一下 Flask 应用，弄完了以后也就没关，结果昨天 Clea...</p>
+        </section>
+        
+        <div class="filter"></div>
+        <img src="/assets/img/how-to-deploy-java-apps-with-docker-a-quick-tutorial@3x-1560x760.png" alt="">
+        
+     </div>
+      
+
+      
+      <div class="read-next-item">
+        <a href="/%E8%BF%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93.html" class="read-next-link"></a>
+          <section>
+            <span>近期复习状况总结</span>
+            <p>开始复习大概有一段时间了，总的来看，复习状况可以用这样几个词语来概括：进度缓慢、效率低下。</p>
+          </section>
+          
+          <div class="filter"></div>
+          <img src="/assets/img/randy-tarampi-U2eUlPEKIgU-unsplash.jpg" alt="">
+          
+      </div>
+      
+    </section>
+    
+    <section class="post-footer-item comment">
+        <div id="disqus_thread"></div>
+    </section>
+    
+  </section>
+
+  <footer class="g-footer">
+  <section>解添昊的博客 ©
+  
+  
+    2017
+    -
+  
+  2019
+  </section>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90533874-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-90533874-1');
+</script>
+  <section>Powered by <a href="//jekyllrb.com">Jekyll</a> | <a href="https://github.com/kaeyleo/jekyll-theme-H2O">Theme H2O</a></section>
+</footer>
+
+
+  <script src="/assets/js/social-share.min.js"></script>
+  <script>
+    socialShare('.social-share', {
+      sites: [
+        
+          'wechat'
+          ,
+          
+        
+          'weibo'
+          ,
+          
+        
+          'qq'
+          ,
+          
+        
+          'douban'
+          ,
+          
+        
+          'twitter'
+          
+        
+      ],
+      wechatQrcodeTitle: "分享到微信朋友圈",
+      wechatQrcodeHelper: '<p>扫码后点击右上角</p><p>将本文分享至朋友圈</p>'
+    });
+  </script>
+
+  
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://loner1024.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  
+
+  <script src="/assets/js/prism.js"></script>
+  <script src="/assets/js/index.min.js"></script>
+</body>
+
+</html>

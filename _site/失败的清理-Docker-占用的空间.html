@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>瘫在床上的感想 - 解添昊的博客</title>
+    <title>失败的清理 Docker 占用的空间 - 解添昊的博客</title>
     <meta name="author"  content="解添昊">
-    <meta name="description" content="瘫在床上的感想">
-    <meta name="keywords"  content="">
+    <meta name="description" content="失败的清理 Docker 占用的空间">
+    <meta name="keywords"  content="Docker, 技术">
     <!-- Open Graph -->
-    <meta property="og:title" content="瘫在床上的感想 - 解添昊的博客">
+    <meta property="og:title" content="失败的清理 Docker 占用的空间 - 解添昊的博客">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/%E7%98%AB%E5%9C%A8%E5%BA%8A%E4%B8%8A%E7%9A%84%E6%84%9F%E6%83%B3.html">
+    <meta property="og:url" content="http://localhost:4000/%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%B8%85%E7%90%86-Docker-%E5%8D%A0%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4.html">
     <meta property="og:description" content="Nothing">
     <meta property="og:site_name" content="解添昊的博客">
     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
@@ -115,42 +115,48 @@ Author: Ray-Eldath
     <div class="post-wrapper">
       <div class="post-tags">
         
+          
+            <a href="/tags.html#Docker" class="post-tag">Docker</a>
+          
+            <a href="/tags.html#%E6%8A%80%E6%9C%AF" class="post-tag">技术</a>
+          
+        
       </div>
-      <h1>瘫在床上的感想</h1>
+      <h1>失败的清理 Docker 占用的空间</h1>
       <div class="post-meta">
         <span class="post-meta-item"><i class="iconfont icon-author"></i>解添昊</span>
-        <time class="post-meta-item" datetime="19-08-12"><i class="iconfont icon-date"></i>12 Aug 2019</time>
+        <time class="post-meta-item" datetime="19-09-20"><i class="iconfont icon-date"></i>20 Sep 2019</time>
       </div>
     </div>
     
     <div class="filter"></div>
-      <div class="post-cover" style="background: url('') center no-repeat; background-size: cover;"></div>
+      <div class="post-cover" style="background: url('/assets/img/how-to-deploy-java-apps-with-docker-a-quick-tutorial@3x-1560x760.png') center no-repeat; background-size: cover;"></div>
     
   </header>
 
   <div class="post-content visible">
     
-    <h2 class="post-subtitle">干什么呢</h2>
+    <h2 class="post-subtitle">坑</h2>
     
 
     <article class="markdown-body">
-      <p>理想和情怀早已一文不值，毕竟如果它们很值钱，可能就会陷入唯心主义。</p>
+      <p>之前在 mac 上安装了 Docker，去尝试部署了一下 Flask 应用，弄完了以后也就没关，结果昨天 CleanMyMac 突然提醒我清理磁盘空间，一看 500g 的硬盘还剩下了100g 可用，想了想，最近也没下载什么东西啊，扫描了一下大文件，也只是发现几部电影而已。隧用空间透镜查看，发现 Docker 竟然占用了 64GB 的空间，吓人一跳。</p>
 
-<p>理性并不总是有用，更何况我所拥有的理性不过是低级阶段。</p>
+<p><img src="../assets/img/屏幕快照 2019-09-20 上午12.38.46.png" alt=" Docker占用" /></p>
 
-<p>少数人掌握规则，这些人中的佼佼者或许可以制定规则。更少的人掌握某一范围内的规律，而掌握较为高层次的规律的人屈指可数。当然，这是指社会运行的规律。
-性格里带来的东西，现在不会的话，以后大概率也不会。</p>
+<p>于是迅速 Google，找到使用 <code class="highlighter-rouge">docker system df</code>可以看到 Docker 对磁盘的占用情况：</p>
 
-<p>我的心态还是不够好，毕竟本来也就是情绪不稳定的人，我自己对心态的调整好像方向有问题，越来越冷漠。</p>
+<p><img src="../assets/img/image-20190920115425722.png" alt="image-20190920115425722" /></p>
 
-<p>我的一生应该怎样度过，似乎已经成了一个迫在眉睫的问题，焦虑和这个问题伴随在一起。</p>
+<p>然而这只是 Docker 占用的情况，而不包含 Docker 本身的占用，查出来的情况确实也和 64gb 相差甚远。</p>
 
-<p>曾经想过，干几件引以为豪的事情，找一个共度一生的人。人生过去四分之一，还是这样。现在，大概还是我的梦想。</p>
+<p>再查！</p>
 
-<p>回头看，一无所有，直至今日。</p>
+<p>找到了这篇文章：</p>
 
-<p>原来我也会无病呻吟。</p>
+<p>https://xts.so/docker/Cleaning-up-Docker-For-Mac.html</p>
 
+<p>好吧，没用，还是 64gb。。。。。</p>
 
     </article>
 
@@ -197,28 +203,28 @@ Author: Ray-Eldath
     <section class="post-footer-item read-next">
       
       <div class="read-next-item">
-        <a href="/%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85.html" class="read-next-link"></a>
+        <a href="/%E4%B8%A2%E6%8E%89%E5%B9%BB%E6%83%B3-%E5%87%86%E5%A4%87%E6%96%97%E4%BA%89.html" class="read-next-link"></a>
         <section>
-          <span>接下来要做的事情</span>
-          <p>接下来要做的事情：</p>
+          <span>丢掉幻想，准备斗争</span>
+          <p>她没那么喜欢我，她只是喜欢被人关心和喜欢的感觉。之前能想到，但被幻想和温情脉脉冲昏了头脑。虽说网恋这事可能没那么靠...</p>
         </section>
         
         <div class="filter"></div>
-        <img src="/assets/img/MVIMG_20190825_112807.jpg" alt="">
+        <img src="/assets/img/IMG_0165.jpeg" alt="">
         
      </div>
       
 
       
       <div class="read-next-item">
-        <a href="/%E6%88%91%E7%9A%842019.html" class="read-next-link"></a>
+        <a href="/%E4%BD%BF%E7%94%A8-Docker-%E9%83%A8%E7%BD%B2-Flask-%E5%BA%94%E7%94%A8.html" class="read-next-link"></a>
           <section>
-            <span>我的2019</span>
-            <p>这个文档创建的时间是6月23日，其实应该是在6月初就想写了，之前也想了很多要说的。到今日，零零碎碎的东西早已忘了，...</p>
+            <span>使用 Docker 部署 Flask 应用</span>
+            <p>简介</p>
           </section>
           
           <div class="filter"></div>
-          <img src="/assets/img/photo-1499244571948-7ccddb3583f1.jpeg" alt="">
+          <img src="/assets/img/how-to-deploy-java-apps-with-docker-a-quick-tutorial@3x-1560x760.png" alt="">
           
       </div>
       
