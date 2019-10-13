@@ -87,9 +87,3 @@ permalink: /:title.html
 # Plugins
 #plugins: [jekyll-paginate]
 gems: [jekyll-paginate, jekyll-sitemap]
-
-sitemap:
-  lastmod: 2019-10-13
-  priority: 0.7
-  changefreq: 'weekly'
-  exclude: 'yes'
