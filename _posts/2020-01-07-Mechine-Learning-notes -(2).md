@@ -120,6 +120,8 @@ Want $min J(Θ_0,Θ_1)$
 
 ![截屏2020-01-07下午11.05.45](../assets/img/截屏2020-01-07下午11.05.45.png)
 
+通过导数项（斜率）使Θ的值向中间靠拢，通过α控制下降速度。
+
 **About α**
 
 If α is too small, gradient descent can be slow.
@@ -151,4 +153,11 @@ cost function for liner regression is always going to be a convex function（凸
 
 **“Batch” Gradient Descent**
 
+（批量梯度下降）
+
 “Batch”: Each step of gradient descent uses all the training examples.
+
+指的是在梯度下降的每一步中，我们都用到了 所有的训练样本。
+
+
+
