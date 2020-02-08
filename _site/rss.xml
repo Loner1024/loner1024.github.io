@@ -5,757 +5,1422 @@
     <description>Nothing</description>
     <link>http://localhost:4000//</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 13 Oct 2019 12:39:58 +0800</pubDate>
-    <lastBuildDate>Sun, 13 Oct 2019 12:39:58 +0800</lastBuildDate>
+    <pubDate>Sat, 08 Feb 2020 16:43:00 +0800</pubDate>
+    <lastBuildDate>Sat, 08 Feb 2020 16:43:00 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
-        <title>毛选书摘</title>
+        <title>机器学习笔记 第三周</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;谁是我们的敌人？谁是我们的朋友？这个问题是革命的首要问题。&lt;/p&gt;
+  &lt;p&gt;这是学习吴恩达《机器学习》的相关笔记&lt;/p&gt;
 
-  &lt;p&gt;注意团结我们的真正的朋友，以攻击我们的真正的敌人。&lt;/p&gt;
-
-  &lt;p&gt;​                                                                                  ——《中国社会各阶级分析》&lt;/p&gt;
+  &lt;p&gt;相关内容：&lt;a href=&quot;https://loner1024.top/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html&quot;&gt;深度学习计划&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-</description>
-        <pubDate>Sun, 22 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E6%AF%9B%E9%80%89%E4%B9%A6%E6%91%98.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%AF%9B%E9%80%89%E4%B9%A6%E6%91%98.html</guid>
-        
-        <category>读书</category>
-        
-        
-        <category>读书</category>
-        
-      </item>
-    
-      <item>
-        <title>丢掉幻想，准备斗争</title>
-        <description>&lt;p&gt;她没那么喜欢我，她只是喜欢被人关心和喜欢的感觉。
-之前能想到，但被幻想和温情脉脉冲昏了头脑。虽说网恋这事可能没那么靠谱，可我每天都和她打电话，给她讲故事哄她睡觉，四个月。我以为这样的陪伴是有效的;我也以为她和我一样想着未来。我想着有一天我要去当面问她，和我在一起。&lt;/p&gt;
+&lt;h1 id=&quot;逻辑回归&quot;&gt;逻辑回归&lt;/h1&gt;
 
-&lt;p&gt;还是没等到。&lt;/p&gt;
+&lt;h2 id=&quot;分类&quot;&gt;分类&lt;/h2&gt;
 
-&lt;p&gt;类似的幻想是长期存在的，但现在，是时候该丢掉了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二分类&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;正如开头所述，她没那么喜欢我，她只是喜欢被人关心和喜欢。这样的状况所带来的一定是心不在焉。&lt;/p&gt;
+&lt;p&gt;$y\in{0,1}$&lt;/p&gt;
 
-&lt;p&gt;一人幻想着未来，一人想着离开，这样的状况怎么能够持久维持下去呢？&lt;/p&gt;
+&lt;p&gt;0: “Negative Class“ 负类&lt;/p&gt;
 
-&lt;p&gt;这样的状况，如同高楼将倾，愈多的幻想只不过是把这座将倾之楼继续加高，然而一旦出现外部的力量，那就是一触即溃。&lt;/p&gt;
+&lt;p&gt;1: ”Positive Class” 正类&lt;/p&gt;
 
-&lt;p&gt;事实已经证明了这些。&lt;/p&gt;
+&lt;p&gt;线性回归的方法应用于分类问题并不是一个好主意，所以我们会开发一个名为&lt;strong&gt;逻辑回归（logistic regression）&lt;/strong&gt;的算法，它的特点是，算法的输出或者说预测值一直介于0和1之间。&lt;/p&gt;
 
-&lt;p&gt;事实是简单粗暴的，但其实之前所有的幻想在那种情况下也是合理的，在人与人的关系上，我显得过于幼稚。&lt;/p&gt;
+&lt;h2 id=&quot;假说陈述&quot;&gt;假说陈述&lt;/h2&gt;
 
-&lt;p&gt;回望这段关系，我想我是有所改变的，我也在努力为她改变。直接的，来自某几位的说法，说我说话像个人了。因为她，我还接受了一些原来有偏见的事情（也许现在还是有偏见。但这样的努力并非有效，因为只有我在变，我的出发点是为了她，所以我要变，她却是默认自己现在就是最正确的状况，所以其实就是我在努力适应她。&lt;/p&gt;
+&lt;p&gt;我们希望我们的假设函数$h(\theta)$在$[0,1]$这个区间范围内：&lt;/p&gt;
 
-&lt;p&gt;当然，我也看到了她并非是不会去改变，只是不愿意为我罢了，究其原因，当然还是开篇所述。解方程与求极限吧，我不知道该怎么说，这确实是我能想到最好的形容。&lt;/p&gt;
+&lt;p&gt;$h_\theta(x)=g(\theta^Tx)$&lt;/p&gt;
 
-&lt;p&gt;讽刺吗，当然讽刺，即使等我再活几十年，它应该也能排进我做过的最愚蠢的事情之一了。&lt;/p&gt;
+&lt;p&gt;$g(z)=\frac{1}{1+e^{-z}}$&lt;/p&gt;
 
-&lt;p&gt;准备斗争的口号对于自己的，当然要对自己展开斗争，事实上，写出这样一篇文字，本就是斗争的一部分。&lt;/p&gt;
+&lt;p&gt;假设函数：&lt;/p&gt;
 
-&lt;p&gt;只有斗争，才能进步！&lt;/p&gt;
+&lt;p&gt;$h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}$&lt;/p&gt;
 
-&lt;p&gt;我说过，即使我讨厌一些人，反感一些人，我也希望他们好，我希望的是所有人都好。这来源与我某种奇怪的社会责任感，也因此，我好像没办法真正去讨厌一个人，这也是一段时间来我痛苦的原因之一吧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%881.34.49.png&quot; alt=&quot;截屏2020-02-06下午1.34.49&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;心狠手辣那种事情实在是做不来，但对自己一定要有枪毙自己的勇气，要有壮士断腕的决心，斗争自己！&lt;/p&gt;
+&lt;p&gt;这个函数就叫Sigmoid function（S型函数） 或者 Logistic function（逻辑函数）&lt;/p&gt;
 
-&lt;p&gt;即使铁憨憨，我也不做我讨厌的那种人，讲道德，有理想，这有错吗？会证明的，我是对的。&lt;/p&gt;
+&lt;p&gt;$\begin{align&lt;em&gt;}&amp;amp; h_\theta (x) = g ( \theta^T x ) \newline \newline&amp;amp; z = \theta^T x \newline&amp;amp; g(z) = \dfrac{1}{1 + e^{-z}}\end{align&lt;/em&gt;}$&lt;/p&gt;
 
-&lt;p&gt;仰望星空，脚踏实地。&lt;/p&gt;
-
-&lt;p&gt;不卑不亢，不慌不忙。&lt;/p&gt;
-
-&lt;p&gt;以上，对事情的叙述都是自己的想法，毕竟也不能去向当事人求证了。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E4%B8%A2%E6%8E%89%E5%B9%BB%E6%83%B3-%E5%87%86%E5%A4%87%E6%96%97%E4%BA%89.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E4%B8%A2%E6%8E%89%E5%B9%BB%E6%83%B3-%E5%87%86%E5%A4%87%E6%96%97%E4%BA%89.html</guid>
-        
-        <category>生活</category>
-        
-        
-        <category>生活</category>
-        
-      </item>
-    
-      <item>
-        <title>失败的清理 Docker 占用的空间</title>
-        <description>&lt;p&gt;之前在 mac 上安装了 Docker，去尝试部署了一下 Flask 应用，弄完了以后也就没关，结果昨天 CleanMyMac 突然提醒我清理磁盘空间，一看 500g 的硬盘还剩下了100g 可用，想了想，最近也没下载什么东西啊，扫描了一下大文件，也只是发现几部电影而已。隧用空间透镜查看，发现 Docker 竟然占用了 64GB 的空间，吓人一跳。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/img/屏幕快照 2019-09-20 上午12.38.46.png&quot; alt=&quot; Docker占用&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;于是迅速 Google，找到使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker system df&lt;/code&gt;可以看到 Docker 对磁盘的占用情况：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../assets/img/image-20190920115425722.png&quot; alt=&quot;image-20190920115425722&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然而这只是 Docker 占用的情况，而不包含 Docker 本身的占用，查出来的情况确实也和 64gb 相差甚远。&lt;/p&gt;
-
-&lt;p&gt;再查！&lt;/p&gt;
-
-&lt;p&gt;找到了这篇文章：&lt;/p&gt;
-
-&lt;p&gt;https://xts.so/docker/Cleaning-up-Docker-For-Mac.html&lt;/p&gt;
-
-&lt;p&gt;好吧，没用，还是 64gb。。。。。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 20 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%B8%85%E7%90%86-Docker-%E5%8D%A0%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%B8%85%E7%90%86-Docker-%E5%8D%A0%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4.html</guid>
-        
-        <category>Docker</category>
-        
-        <category>技术</category>
-        
-        
-        <category>技术</category>
-        
-      </item>
-    
-      <item>
-        <title>使用 Docker 部署 Flask 应用</title>
-        <description>&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
-
-&lt;p&gt;最近用 Flask 写了一个考试的题库系统，功能十分简单，甚至是简陋，不过本着“又不是不能用的精神”，还是用上了，直接拿着开发服务器在一台 Winodws 2008 上运行。问题也暴露出来，服务的运行不足够健壮。&lt;/p&gt;
-
-&lt;p&gt;说来，这也是第一个我开发的凑合能用的那么一个 Flask 应用程序，因此也尝试一下使用 Docker 来部署这个应用。&lt;/p&gt;
-
-&lt;p&gt;你可以在 GitHub 上看到整个项目的结构&lt;/p&gt;
-
-&lt;p&gt;https://github.com/Loner1024/QuestionBank&lt;/p&gt;
-
-&lt;h2 id=&quot;安装-docker&quot;&gt;安装 Docker&lt;/h2&gt;
-
-&lt;p&gt;安装 Docker 的方法可以参考这篇文章 http://1024.services/index.php/archives/20/，基本涵盖了主流的操作系统。&lt;/p&gt;
-
-&lt;p&gt;我自己并没有在服务器上去跑一个 Docker，而是只在本地进行了测试，因此本文所有的内容其实都是在 macOS 上进行的。&lt;/p&gt;
-
-&lt;p&gt;在 macOS 上安装 Docker 十分简单，我们只需要使用 Homebrew 就可以：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;docker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;当然，你也可以去官网下载一个安装包来安装，不过 Homebrew 更方便。&lt;/p&gt;
-
-&lt;p&gt;安装过程可能需要输入密码，给它就好。&lt;/p&gt;
-
-&lt;p&gt;安装好后你可以在状态栏看到 Docker 的鲸鱼图标。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置-docker&quot;&gt;配置 Docker&lt;/h2&gt;
-
-&lt;p&gt;国内的网络环境会导致 Docker 拉去镜像很慢，因此我们现在要做的唯一一项配置个工作就是为 Docker 配置镜像加速器。&lt;/p&gt;
-
-&lt;p&gt;国内有很多云服务厂商提供了镜像加速器服务，我这里列出两个，你也可以在网上寻找其他的。&lt;/p&gt;
-
-&lt;p&gt;Azure 中国镜像 &lt;code class=&quot;highlighter-rouge&quot;&gt;https://dockerhub.azk8s.cn&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;科大镜像站 &lt;code class=&quot;highlighter-rouge&quot;&gt;https://docker.mirrors.ustc.edu.cn&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;在任务栏点击 Docker Desktop 应用图标 -&amp;gt; Perferences… -&amp;gt; Daemon -&amp;gt; Registry mirrors。在列表中填写加速器地址 &lt;code class=&quot;highlighter-rouge&quot;&gt;https://dockerhub.azk8s.cn&lt;/code&gt;。修改完成之后，点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Apply &amp;amp; Restart&lt;/code&gt; 按钮，Docker 就会重启并应用配置的镜像地址了。&lt;/p&gt;
-
-&lt;h2 id=&quot;配置程序依赖&quot;&gt;配置程序依赖&lt;/h2&gt;
-
-&lt;p&gt;我们的 Python 程序一般都要依赖一些包和库，一个经典的做法是用一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt; 来记录使用了那些依赖。&lt;/p&gt;
-
-&lt;p&gt;在这个程序中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt  &lt;/code&gt;文件内容如下：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;flask
-flask-wtf
-flask-migrate
-flask-login
-Flask-SQLAlchemy
-gunicorn
-gevent
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;运行如下命令安装依赖：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install -r requirements.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;配置-gunicorn&quot;&gt;配置 Gunicorn&lt;/h2&gt;
-
-&lt;p&gt;首先需要安装 Gunicorn 和 gevent&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gunicorn gevent
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这两个库是什么作用这里不再赘述。&lt;/p&gt;
-
-&lt;p&gt;然后在项目最上层的目录新建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;gunicorn.conf.py&lt;/code&gt;文件，并填入如下内容：&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;workers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# 定义同时开启的处理请求的进程数量，根据网站流量适当调整
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;worker_class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;gevent&quot;&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# 采用gevent库，支持异步处理请求，提高吞吐量
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;0.0.0.0:80&quot;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# ip和端口
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;然后我们可以通过 gunicorn 命令来测试是否可以正确运行&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gunicorn app:app &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; gunicorn.conf.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;配置-dockerfile&quot;&gt;配置 Dockerfile&lt;/h2&gt;
-
-&lt;p&gt;项目最上层的目录新建一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt;文件，并填入如下内容：&lt;/p&gt;
-
-&lt;div class=&quot;language-dockerfile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; python:3.7&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; /demo&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; requirements.txt ./&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; https://pypi.tuna.tsinghua.edu.cn/simple
-
-&lt;span class=&quot;k&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; . .&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; [&quot;gunicorn&quot;, &quot;app:app&quot;, &quot;-c&quot;, &quot;./gunicorn.conf.py&quot;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这个文件的内容，差不离应该能看懂在做什么事情，至于具体的 Dockerfile 文件应该怎么写，不是这里要说的。&lt;/p&gt;
-
-&lt;h2 id=&quot;构建-docker-镜像&quot;&gt;构建 Docker 镜像&lt;/h2&gt;
-
-&lt;p&gt;只需要一行命令就可以构建 Docker 镜像：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'questionbank'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意：&lt;strong&gt;Docker 镜像名称不能使用大写字母&lt;/strong&gt;，以及，&lt;strong&gt;不要忘记命令后面的点&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;然后就是等待。&lt;/p&gt;
-
-&lt;p&gt;镜像构建完成后，你可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker images&lt;/code&gt;来查看镜像列表。&lt;/p&gt;
-
-&lt;h2 id=&quot;运行镜像&quot;&gt;运行镜像&lt;/h2&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 questionbank
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面这条命令只能用于临时运行，因为它是显式的，一旦关闭命令窗口，也就停止运行了。&lt;/p&gt;
-
-&lt;p&gt;要使用在生产环境，我们可以这样：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 80:80 &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; test-questionbank questionbank
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;这样，你的服务就运行在后台了。&lt;/p&gt;
-
-&lt;h2 id=&quot;管理&quot;&gt;管理&lt;/h2&gt;
-
-&lt;p&gt;要看到当前正在运行的镜像，我们可以使用这条命令：&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker container &lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;终止状态的容器可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker container ls -a&lt;/code&gt; 命令看到。&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker container start &lt;span class=&quot;c&quot;&gt;# 启动容器&lt;/span&gt;
-docker container stop &lt;span class=&quot;c&quot;&gt;# 停止容器&lt;/span&gt;
-docker container restart &lt;span class=&quot;c&quot;&gt;# 重启容器&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;注意，以上启动、停止、重启命令在后面都要带上&lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;出来的容器的 id，例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;docker container stop 978a14e958ae&lt;/code&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 16 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E4%BD%BF%E7%94%A8-Docker-%E9%83%A8%E7%BD%B2-Flask-%E5%BA%94%E7%94%A8.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E4%BD%BF%E7%94%A8-Docker-%E9%83%A8%E7%BD%B2-Flask-%E5%BA%94%E7%94%A8.html</guid>
-        
-        <category>Docker</category>
-        
-        <category>技术</category>
-        
-        
-        <category>技术</category>
-        
-      </item>
-    
-      <item>
-        <title>近期复习状况总结</title>
-        <description>&lt;p&gt;开始复习大概有一段时间了，总的来看，复习状况可以用这样几个词语来概括：&lt;strong&gt;进度缓慢&lt;/strong&gt;、&lt;strong&gt;效率低下&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;好在目前已经意识到问题所在，没有出现自欺欺人的状况。针对这样的问题，提出几点改进措施：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;应当建立短期目标和计划&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;以天为单位，根据当天可利用时间状况，确定当天要完成的复习内容。每天的计划应该在当天造成或前一天晚上制定。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;计划的内容应该根据可利用时间状况来安排，不宜过多，也不宜过少。&lt;/li&gt;
-      &lt;li&gt;利用 TODO 软件，避免忘记&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;复习应该每天进行，不松懈&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;每天应该有固定需要做的事情，如下：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;背单词&lt;/li&gt;
-      &lt;li&gt;跑步&lt;/li&gt;
-      &lt;li&gt;洗鼻子&lt;/li&gt;
-      &lt;li&gt;阅读&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;坚持不懈，持之一恒，不招理由，不找借口，一定坚持完成。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;提升专注力，不摸鱼&lt;/p&gt;
-
-    &lt;p&gt;例如决定看一个小时的书，在这一个小时内，坚决不碰手机和电脑。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;以周为单位定期总结复习状况，适时调整策略和计划，灵活复习，提高效率。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以上，目前大概想到这些。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;梦想从不遥远，关键是努力践行！&lt;/strong&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Sep 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E8%BF%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E8%BF%91%E6%9C%9F%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93.html</guid>
-        
-        <category>考研</category>
-        
-        
-        <category>考研</category>
-        
-      </item>
-    
-      <item>
-        <title>接下来要做的事情</title>
-        <description>&lt;p&gt;接下来要做的事情：&lt;/p&gt;
-
-&lt;p&gt;第一轮数学复习&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;苏德矿高数视频（4/169）&lt;/del&gt;（放弃，太长了，直接上17O搭配课本）&lt;/li&gt;
-  &lt;li&gt;李永乐线性代数基础&lt;/li&gt;
-  &lt;li&gt;17O高数课程（13/106）&lt;/li&gt;
-  &lt;li&gt;田静语法课程&lt;/li&gt;
-  &lt;li&gt;概率论 余丙森教材同步&lt;/li&gt;
-  &lt;li&gt;Grammar in use 同步视频&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;弹性计划，不做计划的奴隶&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;目标导向&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;经常要想的事情：&lt;/p&gt;
-
-&lt;p&gt;正确的观念是这样的：”先大略熟悉概念和方法，再通过做题理解，最后回归概念升华”。一再强调的是，数学不动笔做，永远不会真正理解。听完课以后，课里的例题课后要独立做；看完教材以后，大纲要求的，重要的例题要独立做；做错的题目，定期要再次回顾。相关方法在三篇独立做题攻略中已详细列出，不再重复。&lt;/p&gt;
-
-&lt;p&gt;看多种书和课只会让你成为考研公众号测评师，不是获取高分的正确路径，一定要深度利用好看过资料中的题目，独立做。&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 31 Aug 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85.html</guid>
-        
-        <category>考研</category>
-        
-        
-        <category>考研</category>
-        
-      </item>
-    
-      <item>
-        <title>瘫在床上的感想</title>
-        <description>&lt;p&gt;理想和情怀早已一文不值，毕竟如果它们很值钱，可能就会陷入唯心主义。&lt;/p&gt;
-
-&lt;p&gt;理性并不总是有用，更何况我所拥有的理性不过是低级阶段。&lt;/p&gt;
-
-&lt;p&gt;少数人掌握规则，这些人中的佼佼者或许可以制定规则。更少的人掌握某一范围内的规律，而掌握较为高层次的规律的人屈指可数。当然，这是指社会运行的规律。
-性格里带来的东西，现在不会的话，以后大概率也不会。&lt;/p&gt;
-
-&lt;p&gt;我的心态还是不够好，毕竟本来也就是情绪不稳定的人，我自己对心态的调整好像方向有问题，越来越冷漠。&lt;/p&gt;
-
-&lt;p&gt;我的一生应该怎样度过，似乎已经成了一个迫在眉睫的问题，焦虑和这个问题伴随在一起。&lt;/p&gt;
-
-&lt;p&gt;曾经想过，干几件引以为豪的事情，找一个共度一生的人。人生过去四分之一，还是这样。现在，大概还是我的梦想。&lt;/p&gt;
-
-&lt;p&gt;回头看，一无所有，直至今日。&lt;/p&gt;
-
-&lt;p&gt;原来我也会无病呻吟。&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 12 Aug 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E7%98%AB%E5%9C%A8%E5%BA%8A%E4%B8%8A%E7%9A%84%E6%84%9F%E6%83%B3.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E7%98%AB%E5%9C%A8%E5%BA%8A%E4%B8%8A%E7%9A%84%E6%84%9F%E6%83%B3.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>我的2019</title>
-        <description>&lt;p&gt;这个文档创建的时间是6月23日，其实应该是在6月初就想写了，之前也想了很多要说的。到今日，零零碎碎的东西早已忘了，但思想感情还是大体一致的吧。&lt;/p&gt;
-
-&lt;p&gt;下学期开学就大三了，马上20了，真是奇怪。&lt;/p&gt;
-
-&lt;h2 id=&quot;开始&quot;&gt;开始&lt;/h2&gt;
-
-&lt;p&gt;该从哪开始呢，还是从学校开始吧。这个学期课挺多的，午睡的次数明显减少，上课还是一样的摸鱼划水。不过现在感觉逐渐掌握了考试的技巧，原来复习两星期，现在复习两天还要拿一天来摸鱼。自己的专业上实在是没什么可说的，我也不喜欢，混个毕业吧。&lt;/p&gt;
-
-&lt;h2 id=&quot;技术&quot;&gt;技术&lt;/h2&gt;
-
-&lt;p&gt;本想着，这个学期来要好好学数据结构，结果课多，自己又是个喜欢摸鱼的性格，到现在也没看多少。不过对 flask 的学习倒是上了一个台阶，虽然也还没写出什么实质性的作品来，但能明显感觉到，自己的技术路线在逐渐清晰了。目前打算写一个课程表应用，包括微信小程序，QQ小程序，用 Flutter 开发移动应用，Flask后端，用 Docker 部署，自己实现文字识别的神经网络。这样一套开发下来，在工程上，自己也就具有了一定的能力，也许找个工作也什么问题了。（不过纯 Python  难找，也考虑后面学 Go ）&lt;/p&gt;
-
-&lt;h2 id=&quot;考研&quot;&gt;考研&lt;/h2&gt;
-
-&lt;p&gt;考研，有了一点规划，但尚不明朗，目前来说，至少学校大体可以确定了。上学期刚坚定考研的想法的时候，学校问题真是头大。这学期刚开始看到了新筹建的深圳技术大学，还是408统考，拿深圳大学毕业证学位证，感觉可以尝试一下。后来又改变了想法，想去北京，又考虑了北邮。前两天王道论坛里一看，突然觉得北大有望啊！我还是有些名校情节的，不过这事情还需掂量掂量，毕竟头铁的都死了。&lt;/p&gt;
-
-&lt;h2 id=&quot;自己&quot;&gt;自己&lt;/h2&gt;
-
-&lt;p&gt;愚钝，愈发觉得这两个字符合自己，原想不是什么好的形容，不过最近倒是想通了，愚钝让我多想，我总是试图去把事情想明白，虽然不是所有事情都能想清楚。但多想，总没有坏处。&lt;/p&gt;
-
-&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
-
-&lt;p&gt;刚开始想着，要怎么想个高深一点的标题，到头来，也总结不了，干脆就简单粗暴一点，年底的时候，再写个（下），也算呼应了。&lt;/p&gt;
-
-&lt;p&gt;还是要拿出信心，克服一切艰难困苦，稳步地达到自己的目的！&lt;/p&gt;
-
-&lt;p&gt;2019-07-13&lt;/p&gt;
-</description>
-        <pubDate>Sat, 13 Jul 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E6%88%91%E7%9A%842019.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E6%88%91%E7%9A%842019.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>冒泡排序</title>
-        <description>&lt;h1 id=&quot;冒泡排序&quot;&gt;冒泡排序&lt;/h1&gt;
-
-&lt;p&gt;冒泡排序是一种简单的排序算法，其复杂度为 &lt;strong&gt;&lt;em&gt;O(n^2)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;理解&quot;&gt;理解&lt;/h2&gt;
-
-&lt;p&gt;从头至尾比较数组内相邻两个元素，如果前面的元素比后面的元素大，则交换位置，一次循环过后，最后的元素即为最大值，下次扫描时即可忽略最后一个位置上的元素。&lt;/p&gt;
-
-&lt;h2 id=&quot;pat-题目&quot;&gt;PAT 题目&lt;/h2&gt;
-
-&lt;p&gt;将&lt;em&gt;N&lt;/em&gt;个整数按从小到大排序的冒泡排序法是这样工作的：从头到尾比较相邻两个元素，如果前面的元素大于其紧随的后面元素，则交换它们。通过一遍扫描，则最后一个元素必定是最大的元素。然后用同样的方法对前&lt;em&gt;N&lt;/em&gt;−1个元素进行第二遍扫描。依此类推，最后只需处理两个元素，就完成了对&lt;em&gt;N&lt;/em&gt;个数的排序。&lt;/p&gt;
-
-&lt;p&gt;本题要求对任意给定的&lt;em&gt;K&lt;/em&gt;（&amp;lt;&lt;em&gt;N&lt;/em&gt;），输出扫描完第&lt;em&gt;K&lt;/em&gt;遍后的中间结果数列。&lt;/p&gt;
-
-&lt;h3 id=&quot;输入格式&quot;&gt;输入格式：&lt;/h3&gt;
-
-&lt;p&gt;输入在第1行中给出&lt;em&gt;N&lt;/em&gt;和&lt;em&gt;K&lt;/em&gt;（1≤&lt;em&gt;K&lt;/em&gt;&amp;lt;&lt;em&gt;N&lt;/em&gt;≤100），在第2行中给出&lt;em&gt;N&lt;/em&gt;个待排序的整数，数字间以空格分隔。&lt;/p&gt;
-
-&lt;h3 id=&quot;输出格式&quot;&gt;输出格式：&lt;/h3&gt;
-
-&lt;p&gt;在一行中输出冒泡排序法扫描完第&lt;em&gt;K&lt;/em&gt;遍后的中间结果数列，数字间以空格分隔，但末尾不得有多余空格。&lt;/p&gt;
-
-&lt;h3 id=&quot;输入样例&quot;&gt;输入样例：&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-in&quot;&gt;6 2
-2 3 5 1 6 4
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;输出样例&quot;&gt;输出样例：&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-out&quot;&gt;2 1 3 4 5 6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&quot;解答&quot;&gt;解答&lt;/h3&gt;
-
-&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 24 Jun 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html</link>
-        <guid isPermaLink="true">http://localhost:4000/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html</guid>
-        
-        <category>算法</category>
-        
-        <category>排序算法</category>
-        
-        <category>排序</category>
-        
-        
-        <category>数据结构与算法</category>
-        
-      </item>
-    
-      <item>
-        <title>SQL 学习笔记</title>
-        <description>&lt;h1 id=&quot;sql-学习笔记&quot;&gt;SQL 学习笔记&lt;/h1&gt;
-
-&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
-
-&lt;p&gt;数据库是一种专门管理数据的软件。&lt;/p&gt;
-
-&lt;h3 id=&quot;数据模型&quot;&gt;数据模型&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;层次模型&lt;/li&gt;
-  &lt;li&gt;网状模型&lt;/li&gt;
-  &lt;li&gt;关系模型&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;相比层次模型和网状模型，关系模型理解和使用起来最简单，最终，基于关系模型的关系数据库获得了绝对市场份额。&lt;/p&gt;
-
-&lt;h3 id=&quot;数据类型&quot;&gt;数据类型&lt;/h3&gt;
-
-&lt;p&gt;关系型数据库支持的标准数据类型包括：&lt;/p&gt;
+&lt;h2 id=&quot;决策边界&quot;&gt;决策边界&lt;/h2&gt;
 
 &lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;名称&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;类型&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;说明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;INT&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;整型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;4字节整数类型，范围约+/-21亿&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;BIGINT&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;长整型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;8字节整数类型，范围约+/-922亿亿&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;REAL&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;浮点型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;4字节浮点数，范围约+/-1038&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;DOUBLE&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;浮点型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;8字节浮点数，范围约+/-10308&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;DECIMAL(M,N)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;高精度小数&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;由用户指定精度的小数，例如，DECIMAL(20,10)表示一共20位，其中小数10位，通常用于财务计算&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CHAR(N)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;定长字符串&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储指定长度的字符串，例如，CHAR(100)总是存储100个字符的字符串&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;VARCHAR(N)&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;变长字符串&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储可变长度的字符串，例如，VARCHAR(100)可以存储0~100个字符的字符串&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;BOOLEAN&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;布尔类型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储True或者False&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;DATE&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;日期类型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储日期，例如，2018-06-22&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;TIME&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;时间类型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储时间，例如，12:20:59&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;DATETIME&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;日期和时间类型&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;存储日期+时间，例如，2018-06-22 12:20:59&lt;/td&gt;
+      &lt;td&gt;$h_\theta(x)=g(\theta^Tx)=P(y=1&lt;/td&gt;
+      &lt;td&gt;x;\theta)$&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;主流关系数据库&quot;&gt;主流关系数据库&lt;/h3&gt;
+&lt;p&gt;这个假设函数输出的是给定参数 $x$ 和 $\theta$ 时，$y=1$ 的估计概率。&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;商用数据库，例如：&lt;a href=&quot;https://www.oracle.com/&quot;&gt;Oracle&lt;/a&gt;，&lt;a href=&quot;https://www.microsoft.com/sql-server/&quot;&gt;SQL Server&lt;/a&gt;，&lt;a href=&quot;https://www.ibm.com/db2/&quot;&gt;DB2&lt;/a&gt;等；&lt;/li&gt;
-  &lt;li&gt;开源数据库，例如：&lt;a href=&quot;https://www.mysql.com/&quot;&gt;MySQL&lt;/a&gt;，&lt;a href=&quot;https://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;等；&lt;/li&gt;
-  &lt;li&gt;桌面数据库，以微软&lt;a href=&quot;https://products.office.com/access&quot;&gt;Access&lt;/a&gt;为代表，适合桌面应用程序使用；&lt;/li&gt;
-  &lt;li&gt;嵌入式数据库，以&lt;a href=&quot;https://sqlite.org/&quot;&gt;Sqlite&lt;/a&gt;为代表，适合手机应用和桌面程序。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;所以我们想要预测 $y=1$ 还是 0，我们可以这样做：&lt;/p&gt;
 
-&lt;h3 id=&quot;sql&quot;&gt;SQL&lt;/h3&gt;
+&lt;p&gt;“$y=1$”  if $h_\theta(x) &amp;gt;= 0.5$&lt;/p&gt;
 
-&lt;p&gt;SQL 是结构化查询语言的缩写，用来访问和操作数据库。不同的数据库，都支持 SQL ，通过学习 SQL 这一种语言，就可以操作各种不同的数据库。&lt;/p&gt;
+&lt;p&gt;“$y=0$” if $h_\theta(x) &amp;lt; 0.5$&lt;/p&gt;
 
-&lt;p&gt;虽然 SQL 已经被 ANSI 组织定义为标准，但不同数据库对标准的 SQL 支持不太一致。并且，大部分数据库都在标准的 SQL 上做了扩展。如果只使用标准 SQL 的核心功能，那么所有数据库通常都可以执行。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%881.34.49.png&quot; alt=&quot;截屏2020-02-06下午1.34.49&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;SQL 语言定义了这些操作数据库的能力：&lt;/p&gt;
+&lt;p&gt;观察图像我们可以发现，&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;DDL：Data Definition Language&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当 $z&amp;gt;0$ 时，$g(z)$ 即$h_\theta(x) &amp;gt; 0.5$&lt;/p&gt;
 
-&lt;p&gt;DDL允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。&lt;/p&gt;
+&lt;p&gt;当 $z&amp;lt;0$ 时，$g(z)$ 即$h_\theta(x) &amp;lt; 0.5$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;DML：Data Manipulation Language&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}$&lt;/p&gt;
 
-&lt;p&gt;DML为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。&lt;/p&gt;
+&lt;p&gt;所以，当 $\theta^Tx &amp;gt;=0$ 时，$h_\theta(x) &amp;gt;= 0.5$,&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;DQL：Data Query Language&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当 $\theta^Tx &amp;lt;0$ 时，$h_\theta(x) &amp;lt; 0.5$&lt;/p&gt;
 
-&lt;p&gt;DQL允许用户查询数据，这也是通常最频繁的数据库日常操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%883.37.44.png&quot; alt=&quot;截屏2020-02-06下午3.37.44&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;语法特点&quot;&gt;语法特点&lt;/h3&gt;
+&lt;p&gt;假设我们现在已经拟合好三个参数了： $\theta_0=3,\theta_1=1,\theta_2=1$&lt;/p&gt;
 
-&lt;p&gt;SQL 语言关键字不区分大小写，但对不同的数据库，对于表名和列名，又多数据库区分大小写，有的数据库不区分大小写。同一个数据库，有的在Linux上区分大小写，有的在Windows上不区分大小写。&lt;/p&gt;
+&lt;p&gt;当 $-3+x_1+x_2&amp;gt;=0$ 时，y=1&lt;/p&gt;
 
-&lt;h2 id=&quot;安装-mysql&quot;&gt;安装 MySQL&lt;/h2&gt;
+&lt;p&gt;我们可以在图上画出 $x_1+x_2=3$ 这条线，这条线就是我们的决策边界。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;MySQL&lt;/strong&gt;：MySQL AB —&amp;gt; SUN —&amp;gt; Oracle&lt;/p&gt;
+&lt;p&gt;决策边界是假设函数的属性，决定与其参数，与数据集无关。&lt;/p&gt;
 
-&lt;p&gt;MySQL 本身只是一个 SQL 数据接口，其内部包含多种数据引擎，常用包括：InnoDB 和 MyISAM。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;训练集拟合参数，参数决定边界&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;基于 MySQL 的开源版本，衍生出了各种版本：&lt;/p&gt;
+&lt;h2 id=&quot;代价函数&quot;&gt;代价函数&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;MariaDB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%884.09.34.png&quot; alt=&quot;截屏2020-02-06下午4.09.34&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;由MySQL的创始人创建的一个开源分支版本，使用XtraDB引擎。&lt;/p&gt;
+&lt;p&gt;如何选择参数 $\theta$ ?&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Aurora&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果我们对于 $h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}$ 使用线性回归的代价函数，会发现得到的代价函数是一个&lt;strong&gt;非凸函数&lt;/strong&gt;，这意味着会有很多局部最小值。因此，我们要另外找一个不同代价函数使我们能够很好的使用算法，而且能够保证找到全局的最小值。&lt;/p&gt;
 
-&lt;p&gt;由Amazon改进的一个MySQL版本，专门提供给在AWS托管MySQL用户，号称5倍的性能提升。&lt;/p&gt;
+&lt;h3 id=&quot;逻辑回归的代价函数&quot;&gt;逻辑回归的代价函数&lt;/h3&gt;
 
-&lt;p&gt;&lt;strong&gt;PolarDB&lt;/strong&gt;&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+Cost(h_\theta(x),y)=\begin{cases} -log(h_\theta(x)), &amp; \text {if $y=1$} \\ -log(1-h\_\theta(x)), &amp; \text{if $y$=0} \end{cases} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;由Alibaba改进的一个MySQL版本，专门提供给在&lt;a href=&quot;https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=cz36baxa&quot;&gt;阿里云&lt;/a&gt;托管的MySQL用户，号称6倍的性能提升。&lt;/p&gt;
+&lt;p&gt;图像：&lt;/p&gt;
 
-&lt;p&gt;而MySQL官方版本又分了好几个版本：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%884.31.41.png&quot; alt=&quot;截屏2020-02-06下午4.31.41&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200206163347433.png&quot; alt=&quot;image-20200206163347433&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;简化代价函数和梯度下降&quot;&gt;简化代价函数和梯度下降&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+Cost(h_\theta(x),y)=\begin{cases} -log(h_\theta(x)), &amp; \text {if $y=1$} \\ -log(1-h\_\theta(x)), &amp; \text{if $y$=0} \end{cases} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;因为 y 总是等于 0 或 1，所以我们可以把代价函数简化为一个式子：&lt;/p&gt;
+
+&lt;p&gt;$\mathrm{Cost}(h_\theta(x),y) = - y \; \log(h_\theta(x)) - (1 - y) \log(1 - h_\theta(x))$&lt;/p&gt;
+
+&lt;p&gt;我们可以得到 Logistic 回归的代价函数：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200208163522563.png&quot; alt=&quot;image-20200208163522563&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200208163533859.png&quot; alt=&quot;image-20200208163533859&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个式子是从统计学中的极大似然法中来的，它是统计学中为不同的模型快速寻找参数的方法。&lt;/p&gt;
+
+&lt;p&gt;为了拟合参数，我要找出尽可能使 $J(\theta)$ 小的 $\theta$ 值。&lt;/p&gt;
+
+&lt;p&gt;$\underset{\theta}min J(\theta)$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%8810.31.50.png&quot; alt=&quot;截屏2020-02-06下午10.31.50&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Logictis 梯度下降的模版和线性回归的梯度下降是相同的，但由于假设定义的不同，因此这两个梯度下降其实是不同的东西，在线性回归中 $h_\theta(x)=\theta^Tx$, 在 Logictis 回归中 $h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}$&lt;/p&gt;
+
+&lt;h2 id=&quot;高级优化&quot;&gt;高级优化&lt;/h2&gt;
+
+&lt;p&gt;我们可以使用一些高级优化算法来加快梯度下降的速度，例如：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Community Edition：社区开源版本，免费；&lt;/li&gt;
-  &lt;li&gt;Standard Edition：标准版；&lt;/li&gt;
-  &lt;li&gt;Enterprise Edition：企业版；&lt;/li&gt;
-  &lt;li&gt;Cluster Carrier Grade Edition：集群版。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Conjugate gradient（共轭梯度法）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;BFGS&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;L - BFGS&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
+&lt;p&gt;这三种算法的优点不需要手动选择学习率 $\alpha$ ，而且收敛速度远远快于梯度下降算法，缺点是这些算法十分复杂。&lt;/p&gt;
 
-&lt;h2 id=&quot;关系模型&quot;&gt;关系模型&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-06%E4%B8%8B%E5%8D%8811.47.24.png&quot; alt=&quot;截屏2020-02-06下午11.47.24&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;关系型数据库是简历在关系模型上的，而关系模型的本质就是若干个存储数据的二维表。&lt;/p&gt;
+&lt;p&gt;使用这些算法，我们首先要实现这样一个函数。&lt;/p&gt;
 
-&lt;p&gt;表的每一行称为记录（Record），记录是一个逻辑意义上的数据。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;function [jVal, gradient]=costFunction(theta)
+　　jVal=(theta(1)-5)^2+(theta(2)-5)^2; 
+　　gradient=zeros(2,1);    
+　　gradient(1)=2*(theta(1)-5);    
+　　gradient(2)=2*(theta(2)-5); 
+end
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。&lt;/p&gt;
+&lt;p&gt;函数返回两个值，&lt;code class=&quot;highlighter-rouge&quot;&gt;jVal&lt;/code&gt;是我们的计算的代价函数 J，&lt;code class=&quot;highlighter-rouge&quot;&gt;gradient&lt;/code&gt;是一个2*1的向量，对应公式中的两个偏导数项。&lt;/p&gt;
 
-&lt;p&gt;在关系数据库中，关系是通过&lt;strong&gt;主键&lt;/strong&gt;和&lt;strong&gt;外键&lt;/strong&gt;来维护的。&lt;/p&gt;
+&lt;p&gt;运行这个函数后，就可以调用高级的优化函数&lt;code class=&quot;highlighter-rouge&quot;&gt;fminunc&lt;/code&gt;（无约束最小化函数），调用方式如下：&lt;/p&gt;
 
-&lt;h3 id=&quot;主键&quot;&gt;主键&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;options=optimset('GradObj','on','MaxIter',100);
+initialTheta=zeros(2,1);   
+[optTheta, functionVal, exitFlag]=fminunc(@costFunction, initialTheta, options);
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;在关系数据库中，一张表中的每一行数据被称为一条记录。一条记录就是由多个字段组成的。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;options&lt;/strong&gt; 变量作为一个数据结构可以存储你想要的&lt;strong&gt;options&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;对于关系表，有一个很重要的约束：任意两条记录不能重复。不能重复不是指两条记录不完全相同，而是能够通过某个字段唯一区分出不同的记录，这个字段被称为&lt;strong&gt;主键&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'GradObj','on'&lt;/code&gt;设置梯度目标参数为打开，意味着我们要为这个算法提供一个梯度。&lt;/p&gt;
 
-&lt;p&gt;一旦插入到表中，主键最好不要再修改，因为主键是用来唯一定位记录的，修改了主键，会造成一些了影响。选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'MaxIter',100&lt;/code&gt;设置最大迭代次数为 100，&lt;/p&gt;
 
-&lt;p&gt;作为主键最好是完全业务无关字段，我们一般把这个字段命名为&lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;，常见的可以作为i&lt;code class=&quot;highlighter-rouge&quot;&gt;d&lt;/code&gt;的字段类型有：&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;initialTheta=zeros(2,1);&lt;/code&gt;给出一个猜测的 $\theta$ 初始值，&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[optTheta, functionVal, exitFlag]=fminunc(@costFunction, initialTheta, options);&lt;/code&gt; 开始调用 &lt;code class=&quot;highlighter-rouge&quot;&gt;fminunc&lt;/code&gt;，&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;@costFunction&lt;/code&gt;表示一个指向函数&lt;code class=&quot;highlighter-rouge&quot;&gt;costFunction&lt;/code&gt;的指针&lt;/p&gt;
+
+&lt;h2 id=&quot;多元分类&quot;&gt;多元分类&lt;/h2&gt;
+
+&lt;p&gt;“一对多”（one-versus-all）的分类算法&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/%E6%88%AA%E5%B1%8F2020-02-07%E4%B8%8A%E5%8D%881.34.49.png&quot; alt=&quot;截屏2020-02-07上午1.34.49&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;将三个种类分为三个二元分类问题，分别得出三个拟合函数 $h_\theta(x)$&lt;/p&gt;
+
+&lt;p&gt;为了做出预测，我们给出输入一个新的 $x$ 值，用这个做预测。我们要做的就是在我们三个分类器里面输入 $x$，然后我们选择一个让 $h_\theta^{\left( i \right)}\left( x \right)$ 最大的$ i$，即$\mathop{\max}\limits_i\,h_\theta^{\left( i \right)}\left( x \right)$。&lt;/p&gt;
+
+&lt;h1 id=&quot;正则化&quot;&gt;正则化&lt;/h1&gt;
+
+&lt;h2 id=&quot;过拟合问题&quot;&gt;过拟合问题&lt;/h2&gt;
+
+&lt;p&gt;欠拟合：高偏差&lt;/p&gt;
+
+&lt;p&gt;过拟合：高方差&lt;/p&gt;
+
+&lt;p&gt;过度拟合的问题将会在变量过多的时候出现，这时训练出的假设能很好的拟合训练集，代价函数将会十分接近或等于0，但这将导致它无法泛化到新的样本中。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决过拟合问题&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;自增整数类型：数据库会在插入数据时自动为每一条记录分配一个自增整数。&lt;/li&gt;
-  &lt;li&gt;全局唯一 GUID 类型：使用一种全局唯一的字符串作为主键。&lt;/li&gt;
+  &lt;li&gt;减少选取变量的数量&lt;/li&gt;
+  &lt;li&gt;正则化&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;如果使用 INT 自增类型，那么当一张表的记录数超过2147483647（约21亿）时，会达到上限而出错。使用BIGINT自增类型则可以最多约922亿亿条记录。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;代价函数-1&quot;&gt;代价函数&lt;/h2&gt;
 
-&lt;h3 id=&quot;联合主键&quot;&gt;联合主键&lt;/h3&gt;
+&lt;p&gt;如果我们的参数值较小，意味着一个更简单的假设模型。&lt;/p&gt;
 
-&lt;p&gt;两个或更多的字段都设置为主键，这种主键被称之为联合主键。&lt;/p&gt;
+&lt;p&gt;我们很难确定究竟要缩小哪些参数，所以我们需要修改代价函数来缩小所有参数：&lt;/p&gt;
 
-&lt;p&gt;对于联合主键，允许一列有重复，只要不是所有主键列都重复即可。&lt;/p&gt;
+&lt;p&gt;$J(\theta)=\frac{1}{2m}[\sum\limits_{i=1}^{m})-{y^{(i)}})}^{2}}+\lambda \sum\limits_{j=1}^{n}{\theta_{j}^{2}}]}$&lt;/p&gt;
 
-&lt;p&gt;联合主键并不常用。&lt;/p&gt;
+&lt;p&gt;过大的 $\lambda$ 值将会导致对于参数的惩罚过大，出现欠拟合。&lt;/p&gt;
 
-&lt;h3 id=&quot;外键&quot;&gt;外键&lt;/h3&gt;
+&lt;p&gt;为了让正则化起到应有的效果，我们应该注意选择一个合适的正则化参数 $\theta$&lt;/p&gt;
 
-&lt;p&gt;关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。&lt;/p&gt;
+&lt;h2 id=&quot;线性回归的正则化&quot;&gt;线性回归的正则化&lt;/h2&gt;
 
-&lt;h2 id=&quot;索引&quot;&gt;索引&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../../Library/Application Support/typora-user-images/截屏2020-02-08下午4.37.57.png&quot; alt=&quot;截屏2020-02-08下午4.37.57&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;使用索引可以在数据量大时，获得非常快的查找速度。&lt;/p&gt;
+&lt;p&gt;正则化的正规方程：&lt;/p&gt;
 
-&lt;p&gt;可以对一张表创建多个索引。索引提高了查询效率，但在插入、更新和删除记录时，需要同时修改索引，因此，缩影越多，插入、更新和删除记录的速度就越慢。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200207185026806.png&quot; alt=&quot;image-20200207185026806&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;唯一索引&quot;&gt;唯一索引&lt;/h3&gt;
+&lt;p&gt;矩阵尺寸为 $(n+1)*(n+1)$&lt;/p&gt;
 
-&lt;p&gt;在设计关系数据库时，具有业务含义的列，不宜作为主键，但例如身份证号，邮箱地址这些列，但根据业务需求，这些列又具有唯一性约束。这个时候，就可以为这个列添加一个唯一索引。&lt;/p&gt;
+&lt;p&gt;$n$ 为特征数量。&lt;/p&gt;
 
-&lt;p&gt;是否创建索引，对于用户及应用程序来说，并没有区别。但在数据库中查询时，如果有相应的索引可用，数据库就会自动索引来提高查询效率。&lt;/p&gt;
+&lt;h3 id=&quot;不可逆问题&quot;&gt;不可逆问题&lt;/h3&gt;
 
-&lt;h2 id=&quot;数据查询&quot;&gt;数据查询&lt;/h2&gt;
+&lt;p&gt;如果样本数量比特征数量少，即$m&amp;lt;n$，则会导致正规方程出现不可逆问题&lt;/p&gt;
 
-&lt;h3 id=&quot;基本查询&quot;&gt;基本查询&lt;/h3&gt;
+&lt;p&gt;在正则化中已经考虑了这个问题，只要正则化参数 $\lambda$大于0，就可以保证正规方程中的矩阵可逆。&lt;/p&gt;
 
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;表名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;logistic-回归的正则化&quot;&gt;Logistic 回归的正则化&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT&lt;/code&gt; 是关键字，表示将要执行一个查询，&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;表示”所有列”，&lt;code class=&quot;highlighter-rouge&quot;&gt;FORM&lt;/code&gt;表示将要从哪个表查询。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-02-08下午4.39.51.png&quot; alt=&quot;截屏2020-02-08下午4.39.51&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;查询结果是一个二维表，它包含列名和每一行数据。&lt;/p&gt;
+&lt;p&gt;Logistic 回归的正则化和线性回归相似，但$h_\theta(x)=\frac{1}}$&lt;/p&gt;
 
-&lt;h3 id=&quot;条件查询&quot;&gt;条件查询&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Octave&lt;/strong&gt; 中，我们依旧可以用 &lt;code class=&quot;highlighter-rouge&quot;&gt;fminuc&lt;/code&gt; 函数来求解代价函数最小化的参数，值得注意的是参数${\theta_{0}}$的更新规则与其他情况不同。
+注意：&lt;/p&gt;
 
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;表名&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;条件表达式&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;虽然正则化的逻辑回归中的梯度下降和正则化的线性回归中的表达式看起来一样，但由于两者的${h_\theta}\left( x \right)$不同所以还是有很大差别。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;${\theta_{0}}$不参与其中的任何一个正则化。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
 
 </description>
-        <pubDate>Mon, 10 Jun 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</link>
-        <guid isPermaLink="true">http://localhost:4000/SQL-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</guid>
+        <pubDate>Wed, 05 Feb 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E5%91%A8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%89%E5%91%A8.html</guid>
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+      </item>
+    
+      <item>
+        <title>机器学习笔记 第二周——Octave 教程</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;这是学习吴恩达《机器学习》的相关笔记&lt;/p&gt;
+
+  &lt;p&gt;相关内容：&lt;a href=&quot;https://loner1024.top/深度学习计划.html&quot;&gt;深度学习计划&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;octave-教程octave-tutorial&quot;&gt;Octave 教程（Octave Tutorial）&lt;/h2&gt;
+
+&lt;p&gt;Octave的语法和Matlab十分相似。而且免费，而且开源。&lt;/p&gt;
+
+&lt;h3 id=&quot;基本操作&quot;&gt;基本操作&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;表示注释&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;1 == 2 %false
+1 ～= 2 %相当于其他语言的 !=
+&amp;amp;&amp;amp; % 与 and
+|| % 或 or
+xor(1,0) % 异或
+PS1('&amp;gt;&amp;gt; '); % 可以改变命令提示符的前缀
+a = 3 % 为变量赋值
+a = 3; % 在后面加分号可以组织打印输出
+b = 'hi' % 字符串
+c = (3&amp;gt;=1) % 布尔值
+a = pi; % a=3.1416
+disp(a) % 用于更复杂的输出
+format long % 让字符串显示默认的位数
+format short % 类似long
+v = 1:0.1:2 % v是一组值，从1开始，步长为0.1，一直增加到2
+v = 1:6 % 1到6的六个整数
+exit % 退出 octave
+quit % 退出 octave
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;定义矩阵：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;A = [1 2;3 4;5 6]
+%{
+A =
+
+   1   2
+   3   4
+   5   6
+%}
+ones(2,3)
+%{
+一个 2*3 的矩阵，元素全为1
+ans =
+
+   1   1   1
+   1   1   1
+%}
+2*ones(2,3)
+%{
+一个 2*3 的矩阵，元素全为2
+ans =
+
+   2   2   2
+   2   2   2
+%}
+zeros(1,3)
+%{
+ans =
+
+   0   0   0
+%}
+rand(1,3)
+%{
+一个 1*3 的矩阵，元素为0-1之间的随机值
+ans =
+
+   0.57054   0.68674   0.57777
+%}
+randn(1,3)
+%{
+类似，但元素值服从高斯分布（正态分布），即均值为0，标准差、方差为1
+ans =
+
+  -1.09812  -0.37640   0.89289
+%}
+hist(w) % 绘制直方图
+eye() % 生成单位矩阵，参数为阶数
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;help 命令&lt;/code&gt;可以查看相关命令的帮助。&lt;/p&gt;
+
+&lt;h3 id=&quot;移动数据&quot;&gt;移动数据&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Octave&quot;&gt;size(A) % 返回矩阵大小，返回值本身也是一个矩阵
+size(A,1) % 返回矩阵第 1 维度的大小
+size(A,2) % 返回矩阵第 2 维度的大小
+length(A) % 返回最大维度的大小
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;从系统加载数据&quot;&gt;从系统加载数据&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Octave&quot;&gt;pwd % 输出当前路径
+cd % 改变路径
+ls % 列出文件
+load featuresX.dat % 载入文件
+load('featuresX.dat') % 同上
+who % 显示当前内存中的所有变量
+whos % 显示更详细的变量信息
+clear(A) % 清除某个变量
+v = priceY(1:10) % 将 priceY 的前10个元素赋给v
+save hello.mat v % 将 v 保存为一个 hello.mat 的文件
+clear % 清除工作空间
+save hello.txt v -ascii % 存储成 ascii 编码的文档
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;操作数据&quot;&gt;操作数据&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;A(3,2) % 索引 (3，2) 位置的元素
+A(2,:) % 获得第2列所有元素，: 表示该行或该列所有元素
+% 索引方法也可以直接 = 用于赋值
+A= [A,[100;101;102]] % 在右边附加新的列向量
+A(:) % 把 A 中所有元素放入一个单独的列向量
+C = [A B] %结合两个向量，A在左边，B在右边
+C= [A;B] % A在上，B在下
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;计算数据&quot;&gt;计算数据&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;A*B % 矩阵相乘
+A.*B % 对应元素相乘，对应的还有./
+abs(v) % 所有元素的绝对值
+-v % 相当与-1*v
+v+1 % 所有元素+1
+A‘ % 转置
+val = max(A) % 最大的元素值
+[val,ind] = max(a) % 返回值最大的元素值及索引
+A &amp;lt; 3 % 和每个元素比较，并返回一个矩阵
+find(A&amp;lt;3) % 找出所有小与3的元素并返回索引
+magic(3) % 返回一个幻方，即任意行、列对角线元素加起来都等于相同的值
+[r,c] = find(A&amp;gt;3) % 返回满足条件的元素索引，r为行，c为列
+sum(A) % 返回所有元素和
+prod(A) % 返回所有元素积
+floor(A) % 所有元素向下取整
+ceil(A) % 所有元素向下取整
+pinv(A) % 求逆矩阵
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;数据绘制&quot;&gt;数据绘制&lt;/h3&gt;
+
+&lt;p&gt;简单的图可以帮助我们更好的理解算法内容，并且可以检查算法是否正常运行。&lt;/p&gt;
+
+&lt;p&gt;绘制正弦、余弦图像：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;t = [0:0.001:0.98]
+y1 = sin(2*pi*4*t)
+plot(t,y1) % 正弦
+y2 = cos(2*pi*4*t)
+plot(t,y2) % 余弦
+hold on % 保留旧图像，新的图像生成在原来的图上
+ylabel(&quot;time&quot;) % y轴添加标签
+xlabel(&quot;value&quot;) % x轴添加标签
+legend('sin','cos') % 标记曲线
+title(&quot;my plot&quot;) % 图像标题
+print -dpng 'myPlot.png' % 保存图像
+close % 关闭图像
+figure(1); plot(t,y1) % 为图像标号
+subplot(1,2,1) % 将图像窗口分为1*2的格子并使用第一个格子，用于在一个窗口并列显示多个图像
+axis([0.5 1 -1 1]) % 设置x轴和y轴的范围，此处x为0.5——1，y为-1——1
+clf % 清除图像
+imagesc(A) % 可以将矩阵可视化
+imagesc(A),colorbar,colormap gray % 用灰度图来展现矩阵各个部分的值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;控制语句&quot;&gt;控制语句&lt;/h3&gt;
+
+&lt;h4 id=&quot;for-循法&quot;&gt;for 循法&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;v = zeros(10,1);
+for i=1:10,
+	v(i) = 2^i;
+end;
+% 遍历向量 v,对每个元素执行 v(i) = 2^i
+% 空格非必要
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;while-循环&quot;&gt;while 循环&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;i=1
+while i &amp;lt;= 5,
+	v(i) = 100;
+	i=i+1;
+end;
+% 将 v 的前五个元素覆盖为 100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;if-和-break&quot;&gt;if 和 break&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;i = 1;
+while true,
+	v(i) = 999;
+	i=i+1;
+	if i == 6,
+		break;
+	end;
+end;
+% 将 v 的前五个元素覆盖为 999
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;if-else&quot;&gt;if-else&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;if v(1)==1,
+	disp('This value is one');
+elseif v(1)==2,
+	disp('This value is two');
+else
+	disp('The value is not one or two');
+end;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;函数&quot;&gt;函数&lt;/h4&gt;
+
+&lt;p&gt;定义函数需要先创建一个以函数名字命名，&lt;code class=&quot;highlighter-rouge&quot;&gt;.m&lt;/code&gt;结尾的文件&lt;/p&gt;
+
+&lt;p&gt;例：函数文件&lt;code class=&quot;highlighter-rouge&quot;&gt;squareThisNumber.m&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;function y = squareThisNumber(x)
+y = x^2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以返回两个值：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;function [y1,y2] = squareAndCubeThisNUmber(x)
+y1=x^2
+y2=x^3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;例子&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;计算损失函数：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;x = [1 1;1 2;1 3];
+y = [1;2;3];
+theta = [0;1];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;costFunction.m&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;function J = costFunction(x,y,theta);
+m = size(x,1);
+predictions = x*theta;
+sqrErrors = (predictions-y).^2;
+J = 1/(2*m)*sum(sqrErrors);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;计算损失函数”&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;j = costFunction(x,y,theta)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;矢量&quot;&gt;矢量&lt;/h3&gt;
+
+&lt;p&gt;向量化能够是我们得到一个高效得多的线性回归算法。&lt;/p&gt;
+
+&lt;p&gt;向量化后我们可以得到一个很重要的公式：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;h(x)=\sum_{k=1}^n\theta_jx_j=\theta^Tx&lt;/script&gt;
+
+&lt;p&gt;则梯度下降的公式为：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\theta = \theta-\alpha\frac{1}{m}X^T(X*\theta-y)&lt;/script&gt;
+
+</description>
+        <pubDate>Sun, 02 Feb 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/Octave%E6%95%99%E7%A8%8B.html</link>
+        <guid isPermaLink="true">http://localhost:4000/Octave%E6%95%99%E7%A8%8B.html</guid>
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+      </item>
+    
+      <item>
+        <title>机器学习笔记 第二周</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;这是学习吴恩达《机器学习》的相关笔记&lt;/p&gt;
+
+  &lt;p&gt;相关内容：&lt;a href=&quot;https://loner1024.top/深度学习计划.html&quot;&gt;深度学习计划&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;linearregressionwithmultiplevariables-多元线性回归&quot;&gt;LinearRegressionwithMultipleVariables （多元线性回归）&lt;/h1&gt;
+
+&lt;h2 id=&quot;多维特征multiple-features&quot;&gt;多维特征（Multiple Features）&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-31下午6.26.12.png&quot; alt=&quot;截屏2020-01-31下午6.26.12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;引入多个变量到线性回归模型中。&lt;/p&gt;
+
+&lt;p&gt;$n=$ 变量数量&lt;/p&gt;
+
+&lt;p&gt;$x^i=$  第 i 个变量的训练数据集&lt;/p&gt;
+
+&lt;p&gt;$x_j^i=$  第 i 个变量的训练数据的第 j 个数据&lt;/p&gt;
+
+&lt;p&gt;对于多变量，新的 $h$ 假设为：$h_𝜃(𝑥) = 𝜃_0 + 𝜃_1𝑥_1 + 𝜃_2𝑥_2+. . . +𝜃_n𝑥_n$&lt;/p&gt;
+
+&lt;p&gt;为了使公式简化，引入 $x_0=1$，则公式变为：$h_𝜃(𝑥) = 𝜃_0x_0 + 𝜃_1𝑥_1 + 𝜃_2𝑥_2+. . . +𝜃_n𝑥_n$&lt;/p&gt;
+
+&lt;p&gt;此时参数和变量都为$n+1$个&lt;/p&gt;
+
+&lt;p&gt;$x=\left[
+ \begin{matrix}
+   x_0  &lt;br /&gt;
+   x_1  &lt;br /&gt;
+   x_2  &lt;br /&gt;
+   …  &lt;br /&gt;
+   x_n
+  \end{matrix}
+  \right]                    𝜃=\left[
+ \begin{matrix}
+   𝜃_0  &lt;br /&gt;
+   𝜃_1  &lt;br /&gt;
+   𝜃_2  &lt;br /&gt;
+   …  &lt;br /&gt;
+   𝜃_n
+  \end{matrix}
+  \right] $&lt;/p&gt;
+
+&lt;p&gt;公式可简化为：$h_𝜃(x)=𝜃^Tx$&lt;/p&gt;
+
+&lt;p&gt;矩阵转置后相乘&lt;/p&gt;
+
+&lt;h2 id=&quot;多变量梯度下降gradient-descent-for-multiple-variables&quot;&gt;多变量梯度下降（Gradient Descent for Multiple Variables）&lt;/h2&gt;
+
+&lt;p&gt;多变量线性回归的批量梯度下降算法为：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200131211000727.png&quot; alt=&quot;image-20200131211000727&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;求导后得到：&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}&amp; \text{repeat until convergence:} \; \lbrace \newline \; &amp; \theta_j := \theta_j - \alpha \frac{1}{m} \sum\limits_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)}) \cdot x_j^{(i)} \; &amp; \text{for j := 0...n}\newline \rbrace\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;特征缩放feature-scaling&quot;&gt;特征缩放（Feature Scaling）&lt;/h2&gt;
+
+&lt;p&gt;如果一个问题有多个特征（Feature），并且特征的不同取值都在一个相近的范围内，这样梯度下降法就能更快的收敛。&lt;/p&gt;
+
+&lt;p&gt;假设我们使用两个特征，房屋的尺寸和房间的数量，尺寸的值为 0- 2000 平方英尺，而房间数量的值则是 0-5，以两个参数分别为横纵坐标，绘制代价函数的等 高线图能，看出图像会显得很扁，梯度下降算法需要非常多次的迭代才能收敛。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-31下午9.18.53.png&quot; alt=&quot;截屏2020-01-31下午9.18.53&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解决的方法是尝试将所有特征的尺度都尽量缩放到-1 到 1 之间&lt;img src=&quot;../../Library/Application Support/typora-user-images/截屏2020-01-31下午9.19.58.png&quot; alt=&quot;截屏2020-01-31下午9.19.58&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;均值归一化&quot;&gt;均值归一化&lt;/h3&gt;
+
+&lt;p&gt;令&lt;script type=&quot;math/tex&quot;&gt;x_i=\frac{x_i-μ_i}{S_i}&lt;/script&gt;，$μ_i$是平均值，$S_i$是数据范围。&lt;/p&gt;
+
+&lt;h2 id=&quot;学习率learning-rate&quot;&gt;学习率（Learning Rate）&lt;/h2&gt;
+
+&lt;h3 id=&quot;deebug&quot;&gt;Deebug&lt;/h3&gt;
+
+&lt;p&gt;如何确保梯度下降正常运行？&lt;/p&gt;
+
+&lt;p&gt;我们可以绘制迭代次数和代价函数的图表来观测算法在何时趋于收敛。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-31下午9.49.48.png&quot; alt=&quot;截屏2020-01-31下午9.49.48&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;另外，也可以进行一些自动的收敛测试，让一种算法来告诉我们梯度下降算法是否已经收敛。例如为$J(\theta)$ 设置一个阈值，但通常要寻找一个合适的阈值并不容易。因此通过 $J(\theta)-迭代次数$ 曲线图来观察是一种更好的方式。&lt;/p&gt;
+
+&lt;h3 id=&quot;alpha&quot;&gt;$\alpha$&lt;/h3&gt;
+
+&lt;p&gt;梯度下降算法的每次迭代受到学习率的影响，如果学习率𝑎过小，则达到收敛所需的迭代次数会非常高;如果学习率𝑎过大，每次迭代可能不会减小代价函数，可能会越过局部最小值导致无法收敛。&lt;/p&gt;
+
+&lt;p&gt;可以尝试多个$\alpha$值，绘制出$J(\theta)$随迭代次数变化的图像，再观察图像，选择最合适的$\alpha$值。&lt;/p&gt;
+
+&lt;p&gt;𝛼 = 0.01，0.03，0.1，0.3，1，3，10&lt;/p&gt;
+
+&lt;h2 id=&quot;特征和多项式回归features-and-polynomial-regression&quot;&gt;特征和多项式回归（Features and Polynomial Regression）&lt;/h2&gt;
+
+&lt;p&gt;我们可以自由选择使用什么特征，并通过设计不同的特征，我们可以用更复杂的函数来拟合数据。一些算法能帮助我们自动选择要使用什么特征。&lt;/p&gt;
+
+&lt;h2 id=&quot;正规方程&quot;&gt;正规方程&lt;/h2&gt;
+
+&lt;p&gt;正规方程提供了一种求$\theta$的解析解法，可以不使用迭代算法，直接求解$\theta$的最优值。&lt;/p&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-31下午11.26.51.png&quot; alt=&quot;截屏2020-01-31下午11.26.51&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以通过求解$\frac{\alpha}{\alpha\theta_j}J(\theta)=0$ 找出 $\theta$ .&lt;/p&gt;
+
+&lt;p&gt;假设我们的训练集特征矩阵为 𝑋(包含了 𝑥0 = 1)并且我们的训练集结果为向量 𝑦，则利用正规方程解出向量 $\theta = (𝑋_𝑇𝑋)^{-1}𝑋^𝑇_y$。&lt;/p&gt;
+
+&lt;p&gt;$(𝑋_𝑇𝑋)^{-1}$是$(𝑋_𝑇𝑋)$的逆矩阵&lt;/p&gt;
+
+&lt;p&gt;Octave 中的正规方程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-octave&quot;&gt;pinv(x'*x)*x'*y
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;优缺点&quot;&gt;优缺点&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-02-02下午5.08.46.png&quot; alt=&quot;截屏2020-02-02下午5.08.46&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;梯度下降&lt;/th&gt;
+      &lt;th&gt;正规方程&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需要选择 $\alpha$&lt;/td&gt;
+      &lt;td&gt;不需要 $\alpha$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;需要多次迭代&lt;/td&gt;
+      &lt;td&gt;一次运算&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;即使 $n$ 很大时也能良好运行&lt;/td&gt;
+      &lt;td&gt;需要计算 $(𝑋_𝑇𝑋)^{-1}$ 复杂度大$O(n^3)$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;适用于各类模型&lt;/td&gt;
+      &lt;td&gt;只适用于线性回归&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;正规方程及不可逆性-normal-equation-noninvertibility&quot;&gt;正规方程及不可逆性 （Normal Equation Noninvertibility&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;script type=&quot;math/tex&quot;&gt;\theta = (𝑋_𝑇𝑋)^{-1}𝑋^𝑇_y&lt;/script&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$(𝑋_𝑇𝑋)$ 不可逆的情况很少发生，在Octave中计算时，你会得到一个正常的解，因为在Octave中有两个函数可以求解矩阵的逆——&lt;code class=&quot;highlighter-rouge&quot;&gt;pinv&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;inv&lt;/code&gt;。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;首先，看特征值里是否有一些多余的特征，像这些${x_{1}}$和${x_{2}}$是线性相关的，互为线性函数。同时，当有一些多余的特征时，可以删除这两个重复特征里的其中一个，无须两个特征同时保留，将解决不可逆性的问题。因此，首先应该通过观察所有特征检查是否有多余的特征，如果有多余的就删除掉，直到他们不再是多余的为止，如果特征数量实在太多，我会删除些用较少的特征来反映尽可能多内容，否则我会考虑使用正规化方法。
+如果矩阵$X’X$是不可逆的，（通常来说，不会出现这种情况），如果在&lt;strong&gt;Octave&lt;/strong&gt;里，可以用伪逆函数&lt;code class=&quot;highlighter-rouge&quot;&gt;pinv()&lt;/code&gt; 来实现。这种使用不同的线性代数库的方法被称为伪逆。即使$X’X$的结果是不可逆的，但算法执行的流程是正确的。总之，出现不可逆矩阵的情况极少发生，所以在大多数实现线性回归中，这不是一个大问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;octave-教程octave-tutorial&quot;&gt;Octave 教程（Octave Tutorial）&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://loner1024.top/Octave教程.html&quot;&gt;https://loner1024.top/Octave%E6%95%99%E7%A8%8B.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E5%91%A8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E5%91%A8.html</guid>
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+      </item>
+    
+      <item>
+        <title>考研数学规划</title>
+        <description>&lt;h1 id=&quot;考研数学规划&quot;&gt;考研数学规划&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;本篇为本人对考研数学的总体规划和时间表，规划的总体依据是紧跟狮子，同时结合个人特点。&lt;/p&gt;
+
+  &lt;p&gt;2020-01-20 第一版&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/考研数学.png&quot; alt=&quot;考研数学&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;针对-2020-年考研数学提醒需要注意的地方&quot;&gt;针对 2020 年考研数学提醒需要注意的地方：&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;高度重视计算能力训练，在&lt;strong&gt;准确和速度&lt;/strong&gt;上均要达标。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;识别旧考点新包装，多角度分析&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;指导思想&quot;&gt;指导思想&lt;/h2&gt;
+
+&lt;p&gt;第一阶段：概念清晰，计算过硬，稳拿基础分。&lt;/p&gt;
+
+&lt;p&gt;第二阶段：培养分析能力、数学思维，冲击高分。&lt;/p&gt;
+
+&lt;h2 id=&quot;贯穿始终需要注意的点&quot;&gt;贯穿始终需要注意的点&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对基础知识点的反复强化&lt;/li&gt;
+  &lt;li&gt;整理错难题，归纳错因，找出不足，反复针对性分析——回顾——总结&lt;/li&gt;
+  &lt;li&gt;对独立解题的几篇文章反复看，认真领会，及时纠正，避免题做了，但却无提升的陷阱&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;独立解题&quot;&gt;独立解题&lt;/h2&gt;
+
+&lt;p&gt;1.独立做—在没有任何外力帮助下做完一道题；&lt;/p&gt;
+
+&lt;p&gt;2.规范做—-平常做题时以实考为标准，有条理，不跳步，不潦草，检查时能快速找到相应步骤；&lt;/p&gt;
+
+&lt;p&gt;3.善检查—-对照正确答案，能看出自己错误的地方。这也是一项很关键的能力，在往年的答疑中团队发现，经常求助答疑帮忙找计算错误的，实考战绩往往一般；&lt;/p&gt;
+
+&lt;p&gt;4.善反思—-建立错题本，将做不出的题和典型错题收入其中，简要分析错因或是想不出的原因，写出题目的关键突破点，还可附上解题感想和自我改进建议。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;首先，独立做—–遇到卡壳，冷静下来，分析题目考哪几个点，回忆有哪些可能的方法，做尝试—–其间有公式或者方法实在不熟悉，可查书，再尝试——仍做不出，看答案，遇到不理解答案，顺着答案思路动笔算一遍。如果做出了，很好，分析下卡住的原因和解题关键点，定期收进错题本；还做不出，求助搞懂，仍收进错题本。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;时间表&quot;&gt;时间表&lt;/h2&gt;
+
+&lt;h3 id=&quot;暑假前现在6月底&quot;&gt;暑假前（现在——6月底）&lt;/h3&gt;
+
+&lt;p&gt;紧跟狮子步伐，完成相关的视频课程、练习、计算训练营和排位考试。&lt;/p&gt;
+
+&lt;p&gt;结合教辅教材加强对概念的理解&lt;/p&gt;
+
+&lt;p&gt;扫盲课 + 强化课&lt;/p&gt;
+
+&lt;h3 id=&quot;暑假11月&quot;&gt;暑假——11月&lt;/h3&gt;
+
+&lt;p&gt;加强训练，上手真题，对真题分数进行数据记录和分析，找到薄弱点。&lt;/p&gt;
+
+&lt;p&gt;除真题外，还有教辅题，视频题，题集以及全年训练营题&lt;/p&gt;
+
+&lt;h3 id=&quot;11月后&quot;&gt;11月后&lt;/h3&gt;
+
+&lt;p&gt;继续总结 + 实战模拟&lt;/p&gt;
+
+&lt;p&gt;以上为总体时间表，同时在复习中应制定月计划、周计划和日计划，规划好一段时间内需要完成哪些内容。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 20 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E8%80%83%E7%A0%94%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92.html</guid>
+        
+        <category>考研</category>
+        
+        <category>数学</category>
+        
+        
+        <category>考研</category>
+        
+      </item>
+    
+      <item>
+        <title>机器学习笔记 第一周</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;这是学习吴恩达《机器学习》的相关笔记&lt;/p&gt;
+
+  &lt;p&gt;相关内容：&lt;a href=&quot;https://loner1024.top/深度学习计划.html&quot;&gt;深度学习计划&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Notation:
+&lt;strong&gt;m&lt;/strong&gt; = Number of training examples&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;x&lt;/strong&gt;’s = “input” variable / features&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;y&lt;/strong&gt;’s = “output” variable / “target” variable&lt;/p&gt;
+
+&lt;p&gt;In this data set , m = 47&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午7.46.19.png&quot; alt=&quot;截屏2020-01-07下午7.46.19&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;h：&lt;/strong&gt;hypothesis，假设函数，代价函数&lt;/p&gt;
+
+&lt;p&gt;**How do we represent h **&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午7.50.00.png&quot; alt=&quot;截屏2020-01-07下午7.50.00&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Linear regression with one variable. Univariate （单变量） linear regression.&lt;/strong&gt;（一元线性回归）&lt;/p&gt;
+
+&lt;h1 id=&quot;cost-function&quot;&gt;Cost function&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午7.52.38.png&quot; alt=&quot;截屏2020-01-07下午7.52.38&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午7.59.03.png&quot; alt=&quot;截屏2020-01-07下午7.59.03&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$minimize \frac{1}{2m}\sum^{m}_{i=1}(h_Θ(x^i)-y^i)^2$&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;among them:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;$h_Θ(x^i)=Θ_0+Θ_{x^{(i)}}$&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;and then:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;$J(Θ_0,Θ_1)=\frac{1}{2m}\sum^{m}_{i=1}(h_Θ(x^i)-y^i)^2$&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;whitch is:&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;$minimize J(Θ_0,Θ_1)$&lt;/p&gt;
+
+&lt;p&gt;This function is &lt;strong&gt;cost function&lt;/strong&gt;（代价函数）. Also called &lt;strong&gt;squared error function&lt;/strong&gt;（平方误差函数）.&lt;/p&gt;
+
+&lt;h1 id=&quot;cost-function-intution&quot;&gt;Cost function intution&lt;/h1&gt;
+
+&lt;p&gt;Using this sipmlified definition of hypothesizing cost function, let’s try to understand the cost function concept better.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午8.44.30-0119329.png&quot; alt=&quot;截屏2020-01-07下午8.44.15&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For each value of Θ , we wound up with a different value of function J, we could use his to trace out this plot on the right.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午8.44.55.png&quot; alt=&quot;截屏2020-01-07下午8.44.55&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The optimization objective for our learning algorithm is we want choose the value of Θ that minimizes  J .&lt;/p&gt;
+
+&lt;p&gt;Back the origin function&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午8.50.57.png&quot; alt=&quot;截屏2020-01-07下午8.50.57&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When use two parameters, the plot maybe:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午9.07.23.png&quot; alt=&quot;截屏2020-01-07下午9.07.23&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;bowl function&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gradient-descent&quot;&gt;Gradient descent&lt;/h1&gt;
+
+&lt;p&gt;（梯度下降）&lt;/p&gt;
+
+&lt;p&gt;Have some function $J(Θ_0,Θ_1)$&lt;/p&gt;
+
+&lt;p&gt;Want $min J(Θ_0,Θ_1)$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Outline&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Start with some $Θ_0,Θ_1$&lt;/li&gt;
+  &lt;li&gt;Keep changing  $Θ_0,Θ_1$ to reduce $J(Θ_0,Θ_1)$ until we hopegully end up at a minimum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gradient-descent-algorithm&quot;&gt;Gradient descent algorithm&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午10.21.43.png&quot; alt=&quot;截屏2020-01-07下午10.21.43&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;:=&lt;/strong&gt; Denote assignment&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;α&lt;/strong&gt; learning rate（学习率）, it basically controls how big a step we take downhill with gradient descent.&lt;/p&gt;
+
+&lt;h1 id=&quot;gradient-descent-intuition&quot;&gt;Gradient descent intuition&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;About derivative&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/截屏2020-01-07下午11.05.45.png&quot; alt=&quot;截屏2020-01-07下午11.05.45&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;通过导数项（斜率）使Θ的值向中间靠拢，通过α控制下降速度。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;About α&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If α is too small, gradient descent can be slow.&lt;/p&gt;
+
+&lt;p&gt;If α is too large, gradient descent can overshoot the minimum. It may fail to converge, or even diverge.&lt;/p&gt;
+
+&lt;p&gt;If $Θ_1$ at a local optimum or the local minimum, the derivative would be equal to 0, in gradient descent update, $Θ_1$ unchanged.&lt;/p&gt;
+
+&lt;p&gt;Gradient descent can converge to a local minimum, even with the learning rate α fixed.&lt;/p&gt;
+
+&lt;p&gt;As we approach a local minimum, gradient descent will automatically take smaller steps. So, no need to decrease α over time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200107230842471.png&quot; alt=&quot;image-20200107230842471&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;妙啊！通过导数来控制步长，逐渐收敛。&lt;/p&gt;
+
+&lt;h1 id=&quot;gradient-descent-for-linear-regression&quot;&gt;Gradient descent for linear regression&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Gradient descent algorithm&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/image-20200108191130290.png&quot; alt=&quot;image-20200108191130290&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;cost function for liner regression is always going to be a convex function（凸函数）.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“Batch” Gradient Descent&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（批量梯度下降）&lt;/p&gt;
+
+&lt;p&gt;“Batch”: Each step of gradient descent uses all the training examples.&lt;/p&gt;
+
+&lt;p&gt;指的是在梯度下降的每一步中，我们都用到了 所有的训练样本。&lt;/p&gt;
+
+&lt;h1 id=&quot;线性代数&quot;&gt;线性代数&lt;/h1&gt;
+
+&lt;p&gt;学过，复习了一遍，没有笔记&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 06 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%80%E5%91%A8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%B8%80%E5%91%A8.html</guid>
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+        
+        <category>机器学习</category>
+        
+        <category>深度学习</category>
+        
+      </item>
+    
+      <item>
+        <title>深度学习计划</title>
+        <description>&lt;p&gt;主线：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;吴恩达机器学习课程 https://www.bilibili.com/video/av50747658（约19小时）&lt;/li&gt;
+  &lt;li&gt;吴恩达深度学习课程https://www.bilibili.com/video/av49445369（约25小时）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;补充资料：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3Blue 的相关简短视频可以帮助理解一些概念：https://space.bilibili.com/88461692/channel/detail?cid=26587 包括神经网络，梯度下降和反向传播&lt;/li&gt;
+  &lt;li&gt;CS 231冲一蛤！https://www.bilibili.com/video/av58778425&lt;/li&gt;
+  &lt;li&gt;《神经网络与深度学习》https://www.gitbook.com/book/tigerneil/neural-networks-and-deep-learning-zh&lt;/li&gt;
+  &lt;li&gt;知名花书《深度学习》https://github.com/exacity/deeplearningbook-chinese&lt;/li&gt;
+  &lt;li&gt;FastAI https://course.fast.ai/ 代码一把梭，&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;学完有时间可以去尝试一下天池比赛&lt;/p&gt;
+
+&lt;p&gt;制定计划是为了督促自己学习，切忌划地为牢，自我限制。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html</guid>
+        
+        <category>深度学习</category>
+        
+        <category>DeepLearning</category>
+        
+        
+        <category>深度学习</category>
+        
+        <category>DeepLearning</category>
+        
+      </item>
+    
+      <item>
+        <title>【译】HTTP 基础</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文翻译自 Steve Cope 的《Understanding HTTP Basics》，翻译及发布已获作者授权。&lt;/p&gt;
+
+  &lt;p&gt;翻译为本人原创，未经授权，禁止转载。&lt;/p&gt;
+
+  &lt;p&gt;原文地址：http://www.steves-internet-guide.com/http-basics/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;HTTP 即超文本传输协议，用于 Web 数据传输。&lt;/p&gt;
+
+&lt;p&gt;它是 Web 开发人员必须了解的关键协议，它有着十分广泛的应用，例如在 IOT（物联网） 应用中传输数据和命令。&lt;/p&gt;
+
+&lt;p&gt;HTTP 协议的第一个版本只有一种方法，也就是 GET，使用这个方法将从服务器请求（request）一个页面。&lt;/p&gt;
+
+&lt;p&gt;对应的服务器的响应（response）始终是 HTML 页面。-&lt;a href=&quot;https://zh.wikipedia.org/wiki/超文本传输协议&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;为了让你了解 HTTP 协议的启动过程有多简单，请看一下只有一页的原始规范：&lt;a href=&quot;https://www.w3.org/Protocols/HTTP/AsImplemented.html&quot;&gt;Original specification&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;从最初的 0.9 版本开始，已经有了很多个 HTTP 协议版本。&lt;/p&gt;
+
+&lt;p&gt;目前的版本是1.1，最近一次的修订在2014年，更多的信息可以查看&lt;a href=&quot;https://zh.wikipedia.org/wiki/超文本传输协议&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;如何运行&quot;&gt;如何运行&lt;/h1&gt;
+
+&lt;p&gt;像大多数 Internet 协议一样，HTTP 是使用客户端-服务器模式（即 C/S 模式）的基于方法和响应信息的协议。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/HTTP-Protocol-Basics.jpg&quot; alt=&quot;HTTP-Protocol-Basics&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;客户端发出请求，服务器作出响应。&lt;/p&gt;
+
+&lt;p&gt;HTTP 协议也是一种无状态协议，这意味着服务器不需要存储会话信息，每个请求都彼此独立。参见-&lt;a href=&quot;https://zh.wikipedia.org/wiki/无状态协议&quot;&gt;无状态协议&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这表示：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;所有的请求都来自客户端（浏览器）&lt;/li&gt;
+  &lt;li&gt;服务器响应请求&lt;/li&gt;
+  &lt;li&gt;以可读文本的形式来请求和响应&lt;/li&gt;
+  &lt;li&gt;请求之间彼此独立，服务器无需跟踪请求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;请求和响应的结构&quot;&gt;请求和响应的结构&lt;/h1&gt;
+
+&lt;p&gt;请求和响应是相同的，如下图所示：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/http-request-response-structure.jpg&quot; alt=&quot;http-request-response-structure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一个请求由这些组成：&lt;/p&gt;
+
+&lt;p&gt;请求或方法 + 标题（可选）+ 正文（可选）&lt;/p&gt;
+
+&lt;p&gt;一个响应由这些组成：&lt;/p&gt;
+
+&lt;p&gt;状态码 + 标题（可选）+ 正文（可选）&lt;/p&gt;
+
+&lt;p&gt;简单的 CRLF（回车和换行）组合被用来区分各个部分，单个空白行用于指示标题的结尾。&lt;/p&gt;
+
+&lt;p&gt;如果请求或响应中包含正文，则应该在标题中指出。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;消息中允许消息正文的规则因请求和响应而不同。头字段中的Content-Length或Transfer-Encoding是请求中消息体存在的信号。请求消息的构成与方法语义是独立的，即使方法没有定义任何消息体的使用。&lt;em&gt;– RFC 7230 section 3.3.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;注意：消息正文后没有 CRLF&lt;/p&gt;
+
+&lt;h1 id=&quot;http-请求&quot;&gt;HTTP 请求&lt;/h1&gt;
+
+&lt;p&gt;我们之前介绍了一般的请求响应格式，现在我们将更加详细到的介绍请求消息。&lt;/p&gt;
+
+&lt;p&gt;起始行是强制性的，它的结构如下：&lt;/p&gt;
+
+&lt;p&gt;方法 + 资源路径 + 协议版本&lt;/p&gt;
+
+&lt;p&gt;例如我们尝试访问 www.testsite5.com 上的 testpage.htm，起始行应该是这样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;GET /testpage.htm HTTP/1.1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GET 是方法&lt;/li&gt;
+  &lt;li&gt;/tesspage.htm 是资源的相对路径&lt;/li&gt;
+  &lt;li&gt;HTTP/1.1 是使用的协议版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注意：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;相对路径不包含域名&lt;/li&gt;
+  &lt;li&gt;浏览器使用我们输入的 URL 来创建资源的 URL&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;URL&lt;/strong&gt; 即统一资源定位符。&lt;/p&gt;
+
+&lt;p&gt;浏览器不会显示实际的 http 请求，只有用特殊工具才能看到请求。&lt;/p&gt;
+
+&lt;h1 id=&quot;http-vs-url&quot;&gt;HTTP vs URL&lt;/h1&gt;
+
+&lt;p&gt;大多数人都熟悉在浏览器中输入 URL，就像这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/url-example-1.jpg&quot; alt=&quot;url-example-1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;URL 通常包含被浏览器隐藏的端口号，但是你可以手动添加它：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/url-example-with-port.jpg&quot; alt=&quot;url-example-with-port&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;输入 URL 将告诉浏览器要定位的资源的地址以及用于检索资源的协议。&lt;/p&gt;
+
+&lt;p&gt;http 是将资源（网页、图片、视频等）从服务器传输到客户端的协议。&lt;/p&gt;
+
+&lt;h1 id=&quot;http-响应和响应码&quot;&gt;HTTP 响应和响应码&lt;/h1&gt;
+
+&lt;p&gt;每一个请求都有一个响应。响应由这些组成：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;状态码和描述&lt;/li&gt;
+  &lt;li&gt;一个或者更多的标题（header）（可选）&lt;/li&gt;
+  &lt;li&gt;可以是很多行、可包含二进制信息的正文（可选）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;响应状态码分为5类，每一类都有含义和三位数的代码：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1xx – 信息&lt;/li&gt;
+  &lt;li&gt;2xx – 成功&lt;/li&gt;
+  &lt;li&gt;3xx – 重定向&lt;/li&gt;
+  &lt;li&gt;4xx – 客户端错误&lt;/li&gt;
+  &lt;li&gt;5xx – 服务端错误&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例如，成功的页面请求会返回 200，而不成功的则返回 400。&lt;/p&gt;
+
+&lt;p&gt;你可以在这里找到完整的状态码列表和含义：&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;请求-响应-例子&quot;&gt;请求-响应 例子&lt;/h1&gt;
+
+&lt;p&gt;我们访问一个简单的网页并检查它的请求和响应。&lt;/p&gt;
+
+&lt;p&gt;这是在地址栏输入的内容：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/browser-request.jpg&quot; alt=&quot;browser-request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是浏览器显示的响应：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/browser-response.jpg&quot; alt=&quot;browser-response&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这是后台发生的 http 请求响应：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/HTTP-Request-Response-example.jpg&quot; alt=&quot;HTTP-Request-Response-example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;注意，请求头是由浏览器自动插入的，响应头是有服务器插入的。&lt;/p&gt;
+
+&lt;p&gt;请求中没有正文内容，响应中的正文内容是网页，并显示在浏览器中。&lt;/p&gt;
+
+&lt;h1 id=&quot;请求类型&quot;&gt;请求类型&lt;/h1&gt;
+
+&lt;p&gt;到现在为止，我们还没有提到请求类型，但是在示例中我们已经看到了 GET 类型。&lt;/p&gt;
+
+&lt;p&gt;GET 类型用于从 web 服务器请求资源。&lt;/p&gt;
+
+&lt;p&gt;GET 是最常用的请求类型，并且是原始 HTTP 规范中唯一的请求类型。&lt;/p&gt;
+
+&lt;h1 id=&quot;请求类型方法和动词&quot;&gt;请求类型、方法和动词&lt;/h1&gt;
+
+&lt;p&gt;HTTP 协议支持8种请求类型，在文档中也被称为方法或动词。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GET – 从服务器请求资源&lt;/li&gt;
+  &lt;li&gt;POST – 向服务器提交资源&lt;/li&gt;
+  &lt;li&gt;PUT – 替换资源&lt;/li&gt;
+  &lt;li&gt;DELETE – 删除资源&lt;/li&gt;
+  &lt;li&gt;HEAD – 类似于 GET ，但只返回头（header），不返回正文（content）&lt;/li&gt;
+  &lt;li&gt;OPTIONS – 用于客户端查看服务器的性能。 这个方法会请求服务器返回该资源所支持的所有HTTP请求方法&lt;/li&gt;
+  &lt;li&gt;PATCH – 类似于 PUT，但一般用于对资源的局部更新&lt;/li&gt;
+  &lt;li&gt;TRACE – 回显服务器收到的请求&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如今，在网络上，POST（提交表单） 和 GET（获取网页） 是最常用的方法&lt;/p&gt;
+
+&lt;p&gt;在使用 Web 和 IOT APIs 时，将使用其他的方法。&lt;/p&gt;
+
+&lt;p&gt;关于它们，在 &lt;a href=&quot;https://www.w3school.com.cn/tags/html_ref_httpmethods.asp&quot;&gt;w3 school&lt;/a&gt; 上很好的概述，在 Microsoft &lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods&quot;&gt;MDN&lt;/a&gt; 网站上有更详细的介绍。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 05 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E8%AF%91-HTTP-%E5%9F%BA%E7%A1%80.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E8%AF%91-HTTP-%E5%9F%BA%E7%A1%80.html</guid>
+        
+        <category>翻译</category>
+        
+        <category>HTTP</category>
+        
+        
+        <category>翻译</category>
+        
+        <category>HTTP</category>
+        
+      </item>
+    
+      <item>
+        <title>变革</title>
+        <description>&lt;p&gt;2017年第一次写总结（总共四行字，在微博上还可以找到），2018年好像没写（写了我也想不起来了，找了一下，没有），转眼2019过去了，上半年就写了一次，时过境迁，形势又大有不同了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/img/IMG_1347-7814053.jpeg&quot; alt=&quot;IMG_1347&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这一年，五味杂陈，也有着数个这样的深夜，对着电脑敲下文字，这一年还真是写了很多东西。对于自身的思考，也多了起来。好像有点混乱，实在是，这一年着实的，着实的太多东西了，深刻且繁杂。&lt;/p&gt;
+
+&lt;p&gt;这一年，最为深刻的事情就是认识了她，是的，我也只能谈谈深刻了。1942年，毛泽东在延安文艺座谈会上的讲话中指出：“为什么人的问题，是一个根本的问题，原则的问题。”还说：“这个根本问题不解决，其他许多问题也就不易解决。”伟大导师诚不欺我，终究是落得一片白茫茫大地真干净。关于她，想了太多，反而觉得没什么可写的了。
+&lt;strong&gt;似此星辰非昨夜，为谁风露立中宵。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;历史发展有着必然性，在人身上，或许没有历史如此的宏大，但事情往往也有着必然性。这就出现了一个需求，那就是为了更好的去应对发展趋势，我迫切需要去掌握那样的规律，并使之成为行动指南，如此，心想事成不过是轻而易举。这也许是2019年我所想到的，最为深刻和重要的一点。&lt;/p&gt;
+
+&lt;p&gt;关于2020，最重要的事情就是备战考研，具体的规划等寒假回家再写，总之是要破釜沉舟。
+2019，我和我的两位亲密战友相互帮助了许多，我们伟大的友谊又得到了巨大的升华，虽然三个人在地图上连三条线能把半个中国圈起来，不过这没能影响我们伟大的革命友谊，我们已然决定，为了我们伟大的友谊，考上研究生，北京会师。&lt;/p&gt;
+
+&lt;p&gt;2019年很丰富，痛苦与快乐都有许多，都是原来不曾经历的，我亦思考了许多，学到了很多。与之前的十九年相比，2019是变革的一年，而在未来，我想亦会是有着更加翻天覆地的变化。
+我们必须准备进行同过去时代的斗争形式有着许多不同特点的伟大斗争，让我们满怀信心，迎来21世纪第三个十年的伟大斗争！&lt;/p&gt;
+
+&lt;p&gt;2019过去了，我会记住这一年的。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;多少事，从来急&lt;/em&gt;
+&lt;em&gt;天地转，光阴迫&lt;/em&gt;
+&lt;em&gt;一万年太久，只争朝夕&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;前进，达瓦里希！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;2020年1月1日凌晨&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E5%8F%98%E9%9D%A9.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E5%8F%98%E9%9D%A9.html</guid>
+        
+        <category>2020</category>
+        
+        <category>2019</category>
+        
+        <category>总结</category>
+        
+        
+        <category>总结</category>
+        
+        <category>2019</category>
+        
+        <category>2020</category>
+        
+      </item>
+    
+      <item>
+        <title>解决GPG签名失败的问题</title>
+        <description>&lt;p&gt;最近尝试了一下使用 GPG key 来向 Github 提交代码，这样 commit 会带上&lt;a style=&quot;color:green;&quot;&gt;绿标&lt;/a&gt;认证。&lt;/p&gt;
+
+&lt;p&gt;关于如何使用 GPG key，可以参考这些文章：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://frostming.com/2019/11-25/git-commit-sign&quot;&gt;给你的 Git commit 加上绿勾&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ruanyifeng.com/blog/2013/07/gpg.html&quot;&gt;GPG入门教程&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我在实际使用中，在 commit 时遇到了GPG签名失败的错误：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;error: gpg failed to sign the data
+fatal: failed to write commit object
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;在这里找到了解决办法：&lt;/p&gt;
+
+&lt;p&gt;https://gist.github.com/repodevs/a18c7bb42b2ab293155aca889d447f1b&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;里面有我写的地摊英语，请忽视&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;其实就一行命令：&lt;code class=&quot;highlighter-rouge&quot;&gt;export GPG_TTY=$(tty)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;我们可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;里面加入它，这样不用每次都输入：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;vi ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;编辑完成后&lt;code class=&quot;highlighter-rouge&quot;&gt;：wq&lt;/code&gt;保存&lt;/p&gt;
+
+&lt;p&gt;然后重新加载配置文件：&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;搞定！&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E8%A7%A3%E5%86%B3GPG%E7%AD%BE%E5%90%8D%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E8%A7%A3%E5%86%B3GPG%E7%AD%BE%E5%90%8D%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98.html</guid>
+        
+        <category>GPG</category>
+        
+        <category>error</category>
+        
+        
+        <category>问题</category>
+        
+      </item>
+    
+      <item>
+        <title>计算概论 第三讲 程序运行的基本原理</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文是我学习在 Coursera 上北京大学开设的程序设计与算法专项课程的相关笔记。&lt;/p&gt;
+
+  &lt;p&gt;Coursera 链接：https://www.coursera.org/specializations/biancheng-suanfa&lt;/p&gt;
+
+  &lt;p&gt;你也可以在国内的网站上找到这套课程的相关资料：&lt;/p&gt;
+
+  &lt;p&gt;比如哔哩哔哩：&lt;a href=&quot;[https://search.bilibili.com/all?keyword=%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E7%AE%97%E6%B3%95&amp;amp;from_source=nav_search_new](https://search.bilibili.com/all?keyword=程序设计与算法&amp;amp;from_source=nav_search_new)&quot;&gt;程序设计与算法&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;感谢 Coursera 提供的奖学金！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;问题的提出&quot;&gt;问题的提出&lt;/h1&gt;
+
+&lt;p&gt;计算机为什么能进行计算&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;用二进制表示数据&lt;/li&gt;
+  &lt;li&gt;用布尔代数进行运算&lt;/li&gt;
+  &lt;li&gt;用电路实现布尔运算&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;组合不同电路过于复杂&lt;/p&gt;
+
+&lt;p&gt;应该：&lt;/p&gt;
+
+&lt;p&gt;通过某种并非临时输入的命令控制计算机，命令改了，计算机的功能也就变了——EDVAC&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;存储程序式计算机&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;冯诺依曼式计算机&quot;&gt;冯诺依曼式计算机&lt;/h1&gt;
+
+&lt;p&gt;即存储程序式计算机，分为：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;控制器
+    &lt;ul&gt;
+      &lt;li&gt;统一指挥并控制计算机各部分协调工作&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;运算器
+    &lt;ul&gt;
+      &lt;li&gt;对数据进行算数运算和逻辑运算&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;存储器
+    &lt;ul&gt;
+      &lt;li&gt;存储待操作的信息与中间结果，包括机器指令和数据&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;输入设备&lt;/li&gt;
+  &lt;li&gt;输出设备&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过总线来连接各部分&lt;/p&gt;
+
+&lt;h1 id=&quot;存储器的种类与特点&quot;&gt;存储器的种类与特点&lt;/h1&gt;
+
+&lt;p&gt;8bit（位） = 1Byte（字节）&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;寄存器
+    &lt;ul&gt;
+      &lt;li&gt;CPU内部，存放待操作数和结果&lt;/li&gt;
+      &lt;li&gt;速度与CPU运算部件一致&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;高速缓存（CACHE）
+    &lt;ul&gt;
+      &lt;li&gt;CPU内部（内部高速缓存），用作数据缓冲区&lt;/li&gt;
+      &lt;li&gt;主板上（外部高速缓存）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;内存
+    &lt;ul&gt;
+      &lt;li&gt;CPU里想放但放不下的部分&lt;/li&gt;
+      &lt;li&gt;与外部存储器交数据&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;外存&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;存储器的原理与类型&quot;&gt;存储器的原理与类型&lt;/h1&gt;
+
+&lt;h1 id=&quot;cpu-指令的执行&quot;&gt;CPU 指令的执行&lt;/h1&gt;
+
+&lt;h1 id=&quot;程序的执行&quot;&gt;程序的执行&lt;/h1&gt;
+
+</description>
+        <pubDate>Thu, 12 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%A6%82%E8%AE%BA%E7%AC%AC%E4%B8%89%E8%AE%B2%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</link>
+        <guid isPermaLink="true">http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%A6%82%E8%AE%BA%E7%AC%AC%E4%B8%89%E8%AE%B2%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.html</guid>
+        
+        <category>计算机</category>
         
         <category>笔记</category>
         
-        <category>SQL</category>
+        <category>北京大学程序设计与算法</category>
         
         
-        <category>笔记</category>
+        <category>算法</category>
+        
+        <category>编程</category>
+        
+        <category>程序设计</category>
         
       </item>
     
